@@ -1,0 +1,2413 @@
+<!DOCTYPE html><!-- Last Published: Wed Mar 23 2022 23:02:06 GMT+0000 (Coordinated Universal Time) -->
+<html data-wf-domain="www.ridezoomo.com" data-wf-page="622ee3d3ad632d56510d4345"
+    data-wf-site="5ef41bb456726c3a2ea9838a">
+
+<head>
+    <meta charset="utf-8" />
+    <title>3dmodel</title>
+    <meta content="3dmodel" property="og:title" />
+    <meta content="3dmodel" property="twitter:title" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/css/zoomo-live.6db94c447.min.css"
+        rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+    <script
+        type="text/javascript">WebFont.load({ google: { families: ["Merriweather:300,300italic,400,400italic,700,700italic,900,900italic"] } });</script>
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]-->
+    <script
+        type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);</script>
+    <link
+        href="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/60e2e07c71e811852ab40b34_zoomo%20favicon.png"
+        rel="shortcut icon" type="image/x-icon" />
+    <link href="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/5f3e1f084bbf674321348160_256-x-256.jpg"
+        rel="apple-touch-icon" />
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-175201878-1"></script>
+    <script
+        type="text/javascript">window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'UA-175201878-1', { 'anonymize_ip': false });</script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WNM7384');</script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+        (function (g, e, o, t, a, r, ge, tl, y, s) {
+            g.getElementsByTagName(o)[0].insertAdjacentHTML('afterbegin', '<style id="georedirect1597635794545style">body{opacity:0.0 !important;}</style>');
+            s = function () { g.getElementById('georedirect1597635794545style').innerHTML = 'body{opacity:1.0 !important;}'; };
+            t = g.getElementsByTagName(o)[0]; y = g.createElement(e); y.async = true;
+            y.src = 'https://g10300385420.co/gr?id=-MEuVtLrQLzDfN9ZnXD4&refurl=' + g.referrer + '&winurl=' + encodeURIComponent(window.location);
+            t.parentNode.insertBefore(y, t); y.onerror = function () { s() };
+            georedirect1597635794545loaded = function (redirect) {
+                var to = 0; if (redirect) { to = 5000 };
+                setTimeout(function () { s(); }, to)
+            };
+        })(document, 'script', 'head');
+    </script>
+
+    <style>
+        .w-slider-dot {
+            background-color: transparent;
+        }
+
+        .w-slider-dot.w-active {
+            background-color: transparent;
+        }
+    </style>
+
+    <style>
+        .container {
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            margin: auto;
+        }
+
+        .controls {
+            width: 400px;
+            align-self: center;
+        }
+
+
+        .colorPicker {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .colorPicker .extras {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            float: none;
+        }
+
+
+        .select-bike {
+            display: flex;
+        }
+
+        .select-bike .option {
+            width: 33%;
+        }
+
+        .select-bike .option img {
+            width: 100%;
+        }
+
+        .selected {
+            border: 1px solid black;
+        }
+
+        #c canvas {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+
+        #control-surface {
+            width: 1000px;
+            height: 800px;
+        }
+
+        .customize-navigation {
+            position: fixed;
+            bottom: 100px;
+            width: 100%;
+            left: 0;
+        }
+
+        .customize-navigation>div {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
+    <script src="https://www.googleoptimize.com/optimize.js?id=OPT-WQM3SJZ"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://zoomocdn.azureedge.net/public/js/utm.js"></script>
+
+    <!-- Hotjar Tracking Code for https://www.ridezoomo.com/ -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 2062681, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+    <style>
+        ::selection {
+            color: #000000;
+            background: #ffff31;
+        }
+    </style>
+
+    <!-- Impact -->
+    <script type="text/javascript"
+        async>  (function (a, b, c, d, e, f, g) { e['ire_o'] = c; e[c] = e[c] || function () { (e[c].a = e[c].a || []).push(arguments) }; f = d.createElement(b); g = d.getElementsByTagName(b)[0]; f.async = 1; f.src = a; g.parentNode.insertBefore(f, g); })('//d.impactradius-event.com/A2643025-e5b5-465c-adde-ac19874799851.js', 'script', 'ire', document, window); </script>
+
+    <meta name="theme-color" content="#000000" />
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div id="control-surface"></div>
+            <div class="model"></div>
+        </div>
+    </div>
+
+
+    <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
+        role="banner" class="navbar-v2 w-nav">
+        <div class="chat-banner-wrapper"><a href="/au/partnerships" class="open-chat-banner w-button">50% OFF FOR NEW
+                PRO PLAN DELIVERY PARTNER USERS*</a><img
+                src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/60a20007c0fa390a981620d0_x.svg"
+                loading="lazy" data-w-id="931a77f5-a715-6ccb-9d3b-96b3fc3965f2" alt="" class="close-chat-banner" />
+        </div><a href="#" class="global-banner hidden w-inline-block">
+            <div class="text-block-145">Can&#x27;t get to a store? contact us to arrange a <span>delivery</span></div>
+        </a>
+        <div class="nav-wrapper version-3"><a href="/au/home" class="brand-3 w-nav-brand"><img
+                    src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/6024dcc37fb6d555eb6146c0_Zoomo%20Lockup%20white.svg"
+                    loading="lazy" alt="Zoomo logo" /></a>
+            <nav role="navigation" class="nav-menu-3 w-nav-menu"><a href="/au/bikes"
+                    class="nav-item w-nav-link">E-Bikes</a><a href="/au/plans" class="nav-item w-nav-link">Plans</a><a
+                    href="/au/business" class="nav-item w-nav-link">Businesses</a>
+                <div data-hover="true" data-delay="0" class="blog-dropdown-desk w-dropdown">
+                    <div class="dropdown-toggle-blog w-dropdown-toggle"><a href="/au/blog"
+                            class="nav-item w-nav-link">Blog</a></div>
+                    <nav class="dropdown-list-blog w-dropdown-list"><a
+                            href="https://www.ridezoomo.com/blog-category/au-riders"
+                            class="nav-item dropdown w-nav-link">For riders</a><a
+                            href="https://www.ridezoomo.com/blog-category/au-business"
+                            class="nav-item dropdown w-nav-link">For Business</a><a
+                            href="https://www.ridezoomo.com/blog-category/au-our-people"
+                            class="nav-item dropdown w-nav-link">our people</a></nav>
+                </div>
+                <div data-hover="false" data-delay="0" class="blog-dropdown-mob w-dropdown">
+                    <div class="dropdown-toggle-blog w-dropdown-toggle">
+                        <div class="text-block-155">blog</div>
+                    </div>
+                    <nav class="dropdown-list-blog mob w-dropdown-list"><a href="/au/blog"
+                            class="nav-item dropdown w-nav-link">all</a><a
+                            href="https://www.ridezoomo.com/blog-category/au-riders"
+                            class="nav-item dropdown w-nav-link">For riders</a><a
+                            href="https://www.ridezoomo.com/blog-category/au-business"
+                            class="nav-item dropdown w-nav-link">For Business</a><a
+                            href="https://www.ridezoomo.com/blog-category/au-our-people"
+                            class="nav-item dropdown w-nav-link">our people</a></nav>
+                </div><a href="/au/contact" class="nav-item w-nav-link">Contact</a><a
+                    href="https://apply.workable.com/zoomo/" class="nav-item w-nav-link">careers</a>
+                <div data-hover="false" data-delay="0" class="region-dropdown w-dropdown">
+                    <div class="region-drop-toggle w-dropdown-toggle">
+                        <div class="div-block-486"><img
+                                src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/61518c3f9fee681a950596c6_au.png"
+                                loading="lazy" alt="" class="region-link-flag" />
+                            <div class="region-current-text">AU</div>
+                        </div>
+                    </div>
+                    <nav class="region-drop-list w-dropdown-list"><a href="/us/home"
+                            class="region-link-wrapper w-inline-block"><img
+                                src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/61518c3f561720a8410a24f5_us.png"
+                                loading="lazy" alt="" class="region-link-flag" />
+                            <div class="region-link-text">US</div>
+                        </a><a href="/uk/home" class="region-link-wrapper w-inline-block"><img
+                                src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/61518c3f5b6a420f9a8c44c7_gb.png"
+                                loading="lazy" alt="" class="region-link-flag" />
+                            <div class="region-link-text">UK</div>
+                        </a><a href="/fr/home" class="region-link-wrapper w-inline-block"><img
+                                src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/615704bd8d3f4500b744f80d_fr.png"
+                                loading="lazy" alt="" class="region-link-flag" />
+                            <div class="region-link-text">FR</div>
+                        </a></nav>
+                </div><a href="https://app.ridezoomo.com/au/login" target="_blank"
+                    class="nav-item login w-nav-link">Login <span class="text-span-7">→</span></a>
+            </nav>
+            <div class="w-nav-button">
+                <div class="icon-3 w-icon-nav-menu"></div>
+            </div>
+        </div>
+    </div>
+    <div class="library-color-picker-component">
+        <div class="color-picker-component w-embed">
+            <div id="color-picker"></div><input type="file" class="custom-file-input" name="" id="file-selector"
+                style="display:none;">
+            <style>
+                /*!
+     * Colr Pickr
+     *
+     * R-TEK
+     * 
+     * https://github.com/R-TEK/colr_pickr
+     * 
+     * MIT License
+     */
+                /*
+     * Variables
+     */
+                /*
+     * Mixins
+     */
+                /*
+     * Styling for inputs
+     */
+                #color_picker {
+                    /* Remove spinner buttons */
+                }
+
+                #color_picker input {
+                    height: 30px;
+                    border: 1px solid #ccc;
+                    outline: none;
+                    font-family: monospace;
+                    font-size: 12px;
+                    color: #333;
+                    text-align: center;
+                }
+
+                #color_picker input:focus {
+                    border: 1px solid #007cff;
+                }
+
+                #color_picker input::-webkit-outer-spin-button,
+                #color_picker input::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+
+                #color_picker input[type='number'] {
+                    -moz-appearance: textfield;
+                }
+
+                #color_picker {
+                    display: none;
+                    position: fixed;
+                    width: 350px;
+                    min-height: 400px;
+                    left: calc(50% - 175px);
+                    top: calc(50% - 205px);
+                    background-color: #fff;
+                    border-radius: 5px;
+                    box-shadow: 0 0 10px 0 rgba(1, 1, 1, 0.5);
+                    z-index: 99;
+                    user-select: none;
+                    -webkit-user-select: none;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                }
+
+                #color_picker_bg {
+                    display: none;
+                    position: fixed;
+                    width: 100vw;
+                    height: 100vh;
+                    top: 0;
+                    left: 0;
+                    background-color: #000;
+                    opacity: 0.8;
+                    z-index: 98;
+                }
+
+                #color_picker #color_picked_preview {
+                    display: inline-block;
+                    margin: 0 1px 0 7px;
+                    border-radius: 50%;
+                }
+
+                #color_picker #sliders {
+                    display: inline-block;
+                    width: 285px;
+                    height: 55px;
+                }
+
+                #color_picker #color_slider {
+                    position: relative;
+                    bottom: 1px;
+                }
+
+                #color_picker #color_text_values {
+                    padding: 9px 0 6px 0;
+                    border-top: 1px solid #ccc;
+                    border-bottom: 1px solid #ccc;
+                    text-align: center;
+                }
+
+                #color_picker #switch_color_type {
+                    position: absolute;
+                    margin: 14px 0;
+                    right: 5px;
+                    background: none;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                }
+
+                #color_picker #switch_color_type:hover {
+                    transform: scale(1.1);
+                }
+
+                #color_picker .label_text {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 12px;
+                    color: #555;
+                }
+
+                #color_picker #hex_input {
+                    width: 100px;
+                }
+
+                #color_picker .rgba_divider,
+                #color_picker .hsla_divider {
+                    display: inline-block;
+                }
+
+                #color_picker .rgba_input,
+                #color_picker .hsla_input {
+                    margin: 0 5px;
+                    width: 35px;
+                }
+
+                #color_picker #custom_colors_title {
+                    margin: 12px 5px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: #555;
+                }
+
+                #color_picker #custom_colors_box {
+                    padding: 0 5px 5px 8px;
+                }
+
+                #color_picker #custom_colors_add {
+                    display: inline-block;
+                    position: absolute;
+                    margin: -28px 0 0 0;
+                    padding: 0;
+                    right: 12px;
+                    background: none;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                }
+
+                #color_picker #custom_colors_add:hover {
+                    transform: scale(1.1);
+                }
+
+                #color_picker .custom_colors_preview {
+                    position: relative;
+                    margin: 0 6px 6px 0;
+                    width: 18px;
+                    height: 18px;
+                    top: 1px;
+                    border: 1px solid #d0d0d0;
+                    border-radius: 3px;
+                    outline: none;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                }
+
+                #color_picker .custom_colors_preview:hover {
+                    transform: scale(1.1);
+                }
+
+                #color_picker #color_context_menu {
+                    display: none;
+                    position: fixed;
+                    padding: 3px 0;
+                    width: 115px;
+                    background: #fff;
+                    border: 1px solid #d2d2d2;
+                    box-shadow: 0 0 10px 0 rgba(1, 1, 1, 0.5);
+                }
+
+                #color_picker #color_clear_single,
+                #color_picker #color_clear_all {
+                    padding: 4px;
+                    width: 100%;
+                    background: none;
+                    border: none;
+                    outline: none;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 12px;
+                    color: #111;
+                    text-align: left;
+                    cursor: pointer;
+                }
+
+                #color_picker #color_clear_single:hover,
+                #color_picker #color_clear_all:hover {
+                    background-color: #ececec;
+                }
+
+                /*
+     * Media Queries
+     */
+                /*
+     * Media Query for screen sizes 366 pixels or less
+     */
+                @media only screen and (max-width: 366px) {
+                    #color_picker {
+                        min-height: 488px;
+                        top: calc(50% - 244px);
+                    }
+
+                    #color_picker #color_picked_preview {
+                        position: relative;
+                        margin: 0;
+                        left: calc(50% - 15px);
+                        bottom: 7px;
+                    }
+
+                    #color_picker #sliders {
+                        margin: 0 0 0 32px;
+                    }
+
+                    #color_picker #switch_color_type {
+                        right: 20px;
+                    }
+
+                    #color_picker #custom_colors {
+                        padding: 0 24px;
+                    }
+
+                    #color_picker #custom_colors_title {
+                        margin: 14px 5px;
+                    }
+
+                    #color_picker #custom_colors_add {
+                        right: 40px;
+                    }
+
+                    #color_picker #custom_colors_preview {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            </style>
+        </div>
+        <div class="color-picker-component w-embed w-script">
+            <script>
+                /*!
+                 * Colr Pickr
+                 * R-TEK
+                 * https://github.com/R-TEK/colr_pickr
+                 * MIT License
+                 */
+                /*
+                 * Set-up
+                 */
+                /**
+                 * All global states and variables needed for reference over the entire project
+                 *
+                 * @type {{instance: object | null, boxStatus: boolean, boxStatusTouch: boolean, sliderStatus: boolean, sliderStatusTouch: boolean, opacityStatus: boolean, opacityStatusTouch: boolean, colorTypeStatus: string, hue: number, saturation: number, lightness: number, alpha: number, contextMenuElem: HTMLElement | null, doubleTapTime: number}}
+                 */
+                let colorPicker = {
+                    instance: null,
+                    boxStatus: false,
+                    boxStatusTouch: false,
+                    sliderStatus: false,
+                    sliderStatusTouch: false,
+                    opacityStatus: false,
+                    opacityStatusTouch: false,
+                    colorTypeStatus: 'HEXA',
+                    hue: 0,
+                    saturation: 100,
+                    lightness: 50,
+                    alpha: 1,
+                    contextMenuElem: null,
+                    doubleTapTime: 0
+                };
+
+                /**
+                 * Custom colors saved to local storage
+                 *
+                 * @type {{0: Array}}
+                 */
+                window.LSCustomColors = { 0: [] };
+
+                // Constructor
+                function ColorPicker(element, color) {
+                    // Adding the element to the instance
+                    this.element = element;
+
+                    // Adding the object to the elements object
+                    element.colorPickerObj = this;
+
+                    // Setting color value as a data attribute and changing elements color if color param is given
+                    element.setAttribute('data-color', color);
+                    element.style.background = color;
+
+                    // Click listener to have the button open the color picker interface
+                    element.addEventListener('click', function (event) {
+                        // Applying the items instance to the color picker object
+                        colorPicker.instance = event.target.colorPickerObj;
+
+                        // Displaying the color picker
+                        document.getElementById('color_picker').style.display = 'block';
+                        document.getElementById('color_picker_bg').style.display = 'block';
+
+                        // Updating the color picker
+                        if (event.target.getAttribute('data-color') != 'undefined')
+                            updateColorDisplays(event.target.getAttribute('data-color'));
+                    });
+                }
+
+                // Function to setup the color picker
+                (function () {
+                    // Creating the HTML content
+                    const HTMLContent = `
+            <svg id="color_box" width="348" height="185">
+                <defs>
+                    <linearGradient id="saturation" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#fff"></stop>
+                        <stop offset="100%" stop-color="hsl(0,100%,50%)"></stop>
+                    </linearGradient>
+                    <linearGradient id="brightness" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="rgba(0,0,0,0)"></stop>
+                        <stop offset="100%" stop-color="#000"></stop>
+                    </linearGradient>
+                    <pattern id="pattern_config" width="100%" height="100%">
+                        <rect x="0" y="0" width="100%" height="100%" fill="url(#saturation)"></rect> }
+                        <rect x="0" y="0" width="100%" height="100%" fill="url(#brightness)"></rect>
+                    </pattern>
+                </defs>
+                <rect rx="5" ry="5" x="1" y="1" width="348" height="185" stroke="#fff" stroke-width="2" fill="url(#pattern_config)"></rect>
+                <svg id="box_dragger" x="336" y="14" style="overflow: visible;">
+                    <circle r="9" fill="none" stroke="#000" stroke-width="2"></circle>
+                    <circle r="7" fill="none" stroke="#fff" stroke-width="2"></circle>
+                </svg>
+            </svg>
+            <br>
+            <svg id="color_picked_preview" width="40" height="50">
+                <circle cx="20" cy="29" r="18" stroke="#a7a7a7" stroke-width="1"></circle>
+            </svg>
+            <div id="sliders">
+                <svg id="color_slider" width="285" height="20">
+                    <defs>
+                        <linearGradient id="hue" x1="100%" y1="0%" x2="0%" y2="0%">
+                            <stop offset="0%" stop-color="#f00"></stop>
+                            <stop offset="16.666%" stop-color="#ff0"></stop>
+                            <stop offset="33.333%" stop-color="#0f0"></stop>
+                            <stop offset="50%" stop-color="#0ff"></stop>
+                            <stop offset="66.666%" stop-color="#00f"></stop>
+                            <stop offset="83.333%" stop-color="#f0f"></stop>
+                            <stop offset="100%" stop-color="#f00"></stop>
+                        </linearGradient>
+                    </defs>
+                    <rect rx="5" ry="5" x="1" y="1" width="285" height="20" stroke="#fff" stroke-width="2" fill="url(#hue)"></rect>
+                    <svg id="color_slider_dragger" x="277" y="11" style="overflow: visible;">
+                        <circle r="7" fill="none" stroke="#000" stroke-width="2"></circle>
+                        <circle r="5" fill="none" stroke="#fff" stroke-width="2"></circle>
+                    </svg>
+                </svg>
+                <svg id="opacity_slider" width="285" height="20">
+                    <defs>
+                        <linearGradient id="opacity" x1="100%" y1="0%" x2="0%" y2="0%">
+                            <stop offset="0%" stop-color="#000"></stop>
+                            <stop offset="100%" stop-color="#fff"></stop>
+                        </linearGradient>
+                    </defs>
+                    <rect rx="5" ry="5" x="1" y="6" width="285" height="10" stroke="#fff" stroke-width="2" fill="url(#opacity)"></rect>
+                    <svg id="opacity_slider_dragger" x="277" y="11" style="overflow: visible;">
+                        <circle r="7" fill="none" stroke="#000" stroke-width="2"></circle>
+                        <circle r="5" fill="none" stroke="#fff" stroke-width="2"></circle>
+                    </svg>
+                </svg>
+            </div>
+            <div id="color_text_values">
+                <button id="switch_color_type" name="switch-color-type">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="#555" d="M6 11v-4l-6 5 6 5v-4h12v4l6-5-6-5v4z"/>
+                    </svg>
+                </button>
+                <div id="hexa">
+                    <input id="hex_input" name="hex_input" type="text" maxlength="9" spellcheck="false" />
+                    <br>
+                    <label for="hex_input" class="label_text">HEX</label>
+                </div>
+                <div id="rgba" style="display: none;">
+                    <div class="rgba_divider">
+                        <input class="rgba_input" name="r" type="number" min="0" max="255" />
+                        <br>
+                        <label for="r" class="label_text">R</label>
+                    </div>
+                    <div class="rgba_divider">
+                        <input class="rgba_input" name="g" type="number" min="0" max="255" />
+                        <br>
+                        <label for="g" class="label_text">G</label>
+                    </div>
+                    <div class="rgba_divider">
+                        <input class="rgba_input" name="b" type="number" min="0" max="255" />
+                        <br>
+                        <label for="b" class="label_text">B</label>
+                    </div>
+                    <div class="rgba_divider">
+                        <input class="rgba_input" name="a" type="number" step="0.1" min="0" max="1" />
+                        <br>
+                        <label for="a" class="label_text">A</label>
+                    </div>
+                </div>
+                <div id="hsla" style="display: none;">
+                    <div class="hsla_divider">
+                        <input class="hsla_input" name="h" type="number" min="0" max="359" />
+                        <br>
+                        <label for="h" class="label_text">H</label>
+                    </div>
+                    <div class="hsla_divider">
+                        <input class="hsla_input" name="s" type="number" min="0" max="100" />
+                        <br>
+                        <label for="s" class="label_text">S%</label>
+                    </div>
+                    <div class="hsla_divider">
+                        <input class="hsla_input" name="l" type="number" min="0" max="100" />
+                        <br>
+                        <label for="l" class="label_text">L%</label>
+                    </div>
+                    <div class="rgba_divider">
+                        <input class="hsla_input" name="a" type="number" step="0.1" min="0" max="1" />
+                        <br>
+                        <label for="a" class="label_text">A</label>
+                    </div>
+                </div>
+            </div>
+            <div id="custom_colors">
+                <h6 id="custom_colors_title">Custom Colors:</h6>
+                <div id="custom_colors_box">
+                    <button id="custom_colors_add" name="add-a-custom-color">
+                    <svg viewBox="0 0 24 24" width="12" height="14">
+                        <path fill="#555" d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/>
+                    </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="color_context_menu" class="color_ctx_menu">
+                <button id="color_clear_single" class="color_ctx_menu" name="remove-single-color">Remove Color</button>
+                <button id="color_clear_all" class="color_ctx_menu" name="remove-all-colors">Remove All</button>
+            </div>
+        `;
+
+                    // Creating a node to store the data HTML in
+                    const colorPickerContainer = document.createElement('ASIDE');
+                    colorPickerContainer.id = 'color_picker';
+                    colorPickerContainer.innerHTML = HTMLContent;
+                    document.getElementsByTagName('BODY')[0].appendChild(colorPickerContainer);
+
+                    // Creating a darken background node
+                    const colorPickerBackground = document.createElement('DIV');
+                    colorPickerBackground.id = 'color_picker_bg';
+                    document.getElementsByTagName('BODY')[0].appendChild(colorPickerBackground);
+
+                    // Checking if a local storage variable has been set
+                    if (localStorage.getItem('custom_colors') === null) {
+                        // If not then I set one
+                        localStorage.setItem('custom_colors', '{"0": []}');
+                    } else {
+                        // If it has then I define the LSCustomColors with the value for this
+                        window.LSCustomColors = JSON.parse(localStorage.getItem('custom_colors'));
+
+                        // Looping through the data to update the DOM with the custom colors
+                        for (let x = window.LSCustomColors[0].length - 1; x >= 0; x--) {
+                            // Creating the element
+                            let customColorElem = document.createElement('BUTTON');
+                            customColorElem.className = 'custom_colors_preview';
+                            customColorElem.style.background = window.LSCustomColors[0][x];
+                            customColorElem.setAttribute('data-custom-color', window.LSCustomColors[0][x]);
+                            // Placing the element in the DOM
+                            document.getElementById('custom_colors_box').appendChild(customColorElem);
+                        }
+
+                        // Check whether to display the add color button
+                        if (window.LSCustomColors[0].length == 28)
+                            document.getElementById('custom_colors_add').style.display = 'none';
+                    }
+                })();
+            </script>
+        </div>
+        <div class="color-picker-component w-embed w-script">
+            <script>
+                // Click anywhere to close a pop-up
+                document.addEventListener('mousedown', function () {
+                    // Close context menu
+                    if (event.target.id != 'color_context_menu') {
+                        document.getElementById('color_context_menu').style.display = 'none';
+                    }
+                });
+
+                // Click the darken background to close the color picker
+                document.getElementById('color_picker_bg').addEventListener('click', function () {
+                    // Hiding elements
+                    document.getElementById('color_picker').style.display = 'none';
+                    document.getElementById('color_picker_bg').style.display = 'none';
+
+                    // Calling Event to make all the necessary changes
+                    colorChange(
+                        `hsla(${colorPicker.hue}, ${colorPicker.saturation}%, ${colorPicker.lightness}%, ${colorPicker.alpha})`
+                    );
+                });
+
+                /*
+                 * Custom Color Change Event
+                 */
+
+                // Custom color change event function
+                function colorChange(color, elem) {
+                    // Creating the event
+                    const event = new CustomEvent('colorChange', {
+                        // Adding the response details
+                        detail: {
+                            color: color
+                        }
+                    });
+
+                    // Defining element
+                    const element = elem === undefined ? colorPicker.instance.element : elem;
+
+                    // Changing color attributes
+                    element.setAttribute('data-color', color);
+                    element.style.background = color;
+
+                    // Dispatching the event for the active object
+                    element.dispatchEvent(event);
+                }
+
+                /*
+                 * Color Value Converter
+                 */
+
+                // Convert HSLA to RGBA
+                let HSLAToRGBA = function (h, s, l, a, toHex) {
+                    s /= 100;
+                    l /= 100;
+
+                    let c = (1 - Math.abs(2 * l - 1)) * s,
+                        x = c * (1 - Math.abs(((h / 60) % 2) - 1)),
+                        m = l - c / 2,
+                        r = 0,
+                        g = 0,
+                        b = 0;
+
+                    if (0 <= h && h < 60) {
+                        r = c;
+                        g = x;
+                        b = 0;
+                    } else if (60 <= h && h < 120) {
+                        r = x;
+                        g = c;
+                        b = 0;
+                    } else if (120 <= h && h < 180) {
+                        r = 0;
+                        g = c;
+                        b = x;
+                    } else if (180 <= h && h < 240) {
+                        r = 0;
+                        g = x;
+                        b = c;
+                    } else if (240 <= h && h < 300) {
+                        r = x;
+                        g = 0;
+                        b = c;
+                    } else if (300 <= h && h < 360) {
+                        r = c;
+                        g = 0;
+                        b = x;
+                    }
+
+                    r = Math.round((r + m) * 255);
+                    g = Math.round((g + m) * 255);
+                    b = Math.round((b + m) * 255);
+
+                    if (toHex === true) {
+                        return RGBAToHexA(r, g, b, a);
+                    } else {
+                        return {
+                            r: r,
+                            g: g,
+                            b: b,
+                            a: a
+                        };
+                    }
+                };
+
+                // Convert RGBA to HSLA
+                let RGBAToHSLA = function (r, g, b, a) {
+                    r /= 255;
+                    g /= 255;
+                    b /= 255;
+                    a = a == undefined ? 1 : a;
+
+                    let cmin = Math.min(r, g, b),
+                        cmax = Math.max(r, g, b),
+                        delta = cmax - cmin,
+                        h = 0,
+                        s = 0,
+                        l = 0;
+
+                    if (delta == 0) h = 0;
+                    else if (cmax == r) h = ((g - b) / delta) % 6;
+                    else if (cmax == g) h = (b - r) / delta + 2;
+                    else h = (r - g) / delta + 4;
+
+                    h = Math.round(h * 60);
+
+                    if (h < 0) h += 360;
+
+                    l = (cmax + cmin) / 2;
+
+                    s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+
+                    s = +(s * 100).toFixed(1);
+                    l = +(l * 100).toFixed(1);
+
+                    return {
+                        h: h,
+                        s: s,
+                        l: l,
+                        a: a
+                    };
+                };
+
+                // Convert RGBA to HexA
+                let RGBAToHexA = function (r, g, b, a) {
+                    r = r.toString(16);
+                    g = g.toString(16);
+                    b = b.toString(16);
+                    a = Math.round(a * 255).toString(16);
+
+                    if (r.length == 1) r = '0' + r;
+                    if (g.length == 1) g = '0' + g;
+                    if (b.length == 1) b = '0' + b;
+                    if (a.length == 1) a = '0' + a;
+
+                    if (a == 'ff') {
+                        return '#' + r + g + b;
+                    } else {
+                        return '#' + r + g + b + a;
+                    }
+                };
+
+                // Convert HexA to RGBA
+                let hexAToRGBA = function (h, toHSL) {
+                    if (h.length == 7) h += 'ff';
+                    else if (h.length == 4) h += h.substring(1, 4) + 'ff';
+
+                    let r = 0,
+                        g = 0,
+                        b = 0,
+                        a = 1;
+
+                    if (h.length == 5) {
+                        r = '0x' + h[1] + h[1];
+                        g = '0x' + h[2] + h[2];
+                        b = '0x' + h[3] + h[3];
+                        a = '0x' + h[4] + h[4];
+                    } else if (h.length == 9) {
+                        r = '0x' + h[1] + h[2];
+                        g = '0x' + h[3] + h[4];
+                        b = '0x' + h[5] + h[6];
+                        a = '0x' + h[7] + h[8];
+                    }
+
+                    a = +(a / 255).toFixed(3);
+
+                    if (toHSL === true) {
+                        return RGBAToHSLA(+r, +g, +b, a);
+                    } else {
+                        return 'rgba(' + +r + ',' + +g + ',' + +b + ',' + a + ')';
+                    }
+                };
+
+                /*
+                 * Color Text Values
+                 */
+
+                // Function to switch the color type inputs
+                let switchColorType = function () {
+                    // Checking the current selected input color type
+                    if (colorPicker.colorTypeStatus == 'HEXA') {
+                        // Updating the data object
+                        colorPicker.colorTypeStatus = 'RGBA';
+
+                        // Displaying the correct elements
+                        document.getElementById('hexa').style.display = 'none';
+                        document.getElementById('rgba').style.display = 'block';
+
+                        // Converting the value
+                        const RGBAValue = HSLAToRGBA(
+                            colorPicker.hue,
+                            colorPicker.saturation,
+                            colorPicker.lightness,
+                            colorPicker.alpha
+                        );
+
+                        // Applying the value to the inputs
+                        document.getElementsByClassName('rgba_input')[0].value = RGBAValue.r;
+                        document.getElementsByClassName('rgba_input')[1].value = RGBAValue.g;
+                        document.getElementsByClassName('rgba_input')[2].value = RGBAValue.b;
+                        document.getElementsByClassName('rgba_input')[3].value = RGBAValue.a;
+                    } else if (colorPicker.colorTypeStatus == 'RGBA') {
+                        // Updating the data object
+                        colorPicker.colorTypeStatus = 'HSLA';
+
+                        // Displaying the correct elements
+                        document.getElementById('rgba').style.display = 'none';
+                        document.getElementById('hsla').style.display = 'block';
+
+                        // Applying the value to the inputs
+                        document.getElementsByClassName('hsla_input')[0].value = colorPicker.hue;
+                        document.getElementsByClassName('hsla_input')[1].value = colorPicker.saturation;
+                        document.getElementsByClassName('hsla_input')[2].value = colorPicker.lightness;
+                        document.getElementsByClassName('hsla_input')[3].value = colorPicker.alpha;
+                    } else if (colorPicker.colorTypeStatus == 'HSLA') {
+                        // Updating the data object
+                        colorPicker.colorTypeStatus = 'HEXA';
+
+                        // Displaying the correct elements
+                        document.getElementById('hsla').style.display = 'none';
+                        document.getElementById('hexa').style.display = 'block';
+
+                        // Converting the value
+                        const hexValue = HSLAToRGBA(
+                            colorPicker.hue,
+                            colorPicker.saturation,
+                            colorPicker.lightness,
+                            colorPicker.alpha,
+                            true
+                        );
+
+                        // Applying the value to the input
+                        document.getElementById('hex_input').value = hexValue;
+                    }
+                };
+                document.getElementById('switch_color_type').addEventListener('click', function () {
+                    switchColorType();
+                });
+            </script>
+        </div>
+        <div class="color-picker-component w-embed w-script">
+            <script>
+                // Event to update the color when the user leaves the hex value box
+                document.getElementById('hex_input').addEventListener('blur', function () {
+                    // Value
+                    const hexInput = this.value;
+
+                    // Check to see if the hex is formatted correctly
+                    if (hexInput.match(/^#[0-9a-f]{3}([0-9a-f]{3})?([0-9a-f]{2})?$/)) {
+                        // Updating the picker
+                        updateColorDisplays(hexInput);
+                    }
+                });
+
+                // Gathering all the rgba inputs boxes
+                document.querySelectorAll('.rgba_input').forEach((element) => {
+                    // Event to update the color when the user changes the value to any of the input boxes
+                    element.addEventListener('change', function () {
+                        // Input boxes
+                        const rgbaInput = document.querySelectorAll('.rgba_input');
+
+                        // Checking that the numbers are within the correct boundaries
+                        if (rgbaInput[0].value > 255) throw 'Value must be below 256';
+                        if (rgbaInput[1].value > 255) throw 'Value must be below 256';
+                        if (rgbaInput[2].value > 255) throw 'Value must be below 256';
+                        if (rgbaInput[3].value > 1) throw 'Value must be equal to or below 1';
+
+                        // Updating the picker
+                        updateColorDisplays(
+                            `rgba(${rgbaInput[0].value}, ${rgbaInput[1].value}, ${rgbaInput[2].value}, ${rgbaInput[3].value})`
+                        );
+                    });
+                });
+
+                // Gathering all the hsla inputs boxes
+                document.querySelectorAll('.hsla_input').forEach((element) => {
+                    // Event to update the color when the user changes the value to any of the input boxes
+                    element.addEventListener('change', function () {
+                        // Input boxes
+                        const hslaInput = document.querySelectorAll('.hsla_input');
+
+                        // Checking that the numbers are within the correct boundaries
+                        if (hslaInput[0].value > 359) throw 'Value must be below 360';
+                        if (hslaInput[1].value > 100) throw 'Value must be below 100';
+                        if (hslaInput[2].value > 100) throw 'Value must be below 100';
+                        if (hslaInput[3].value > 1) throw 'Value must be equal to or below 1';
+
+                        // Updating the picker
+                        updateColorDisplays(
+                            `hsla(${hslaInput[0].value}, ${hslaInput[1].value}%, ${hslaInput[2].value}%, ${hslaInput[3].value})`
+                        );
+                    });
+                });
+
+                /*
+                 * Custom Colors
+                 */
+
+                // Click on color listener to update the picker
+                document.getElementById('custom_colors_box').addEventListener('click', function (event) {
+                    // Making sure the users has selected a color preview
+                    if (event.target.className == 'custom_colors_preview') {
+                        // Color
+                        const color = event.target.getAttribute('data-custom-color');
+                        // Updating the picker with that color
+                        updateColorDisplays(color);
+                    }
+                });
+
+                // Function to add a new custom color
+                let addCustomColor = function () {
+                    // Limiting a custom color to two rows
+                    if (window.LSCustomColors[0].length == 27)
+                        document.getElementById('custom_colors_add').style.display = 'none';
+
+                    // Getting the color
+                    const color = `hsla(${colorPicker.hue}, ${colorPicker.saturation}%, ${colorPicker.lightness}%, ${colorPicker.alpha})`;
+
+                    // Creating the element
+                    let customColorElem = document.createElement('BUTTON');
+                    customColorElem.className = 'custom_colors_preview';
+                    customColorElem.style.background = color;
+                    customColorElem.setAttribute('data-custom-color', color);
+                    // Placing the element in the DOM
+                    document.getElementById('custom_colors_box').appendChild(customColorElem);
+
+                    // Pushing the color to the top of the array
+                    window.LSCustomColors[0].unshift(color);
+
+                    // Updating the local storage with the new custom color
+                    localStorage.setItem('custom_colors', JSON.stringify(window.LSCustomColors));
+                };
+                document.getElementById('custom_colors_add').addEventListener('mouseup', function () {
+                    addCustomColor();
+                });
+
+                // Event to fire for a context menu
+                document.getElementById('custom_colors_box').addEventListener('contextmenu', function (event) {
+                    // Making sure the users has selected a color preview
+                    if (event.target.className == 'custom_colors_preview') {
+                        // Preventing default
+                        event.preventDefault();
+
+                        // Defining the context menu
+                        const contextMenu = document.getElementById('color_context_menu');
+
+                        // Updating the styling of the menu
+                        contextMenu.style.display = 'block';
+                        contextMenu.style.top = event.target.getBoundingClientRect().top + 25 + 'px';
+                        contextMenu.style.left = event.target.getBoundingClientRect().left + 'px';
+
+                        // Defining the color selected
+                        colorPicker.contextMenuElem = event.target;
+                    }
+                });
+
+                // Clears a selected custom color
+                let clearSingleCustomColor = function (element) {
+                    const elemToRemove = element === undefined ? colorPicker.contextMenuElem : element;
+
+                    // Removing the element
+                    document.getElementById('custom_colors_box').removeChild(elemToRemove);
+
+                    // Clearing the variable
+                    window.LSCustomColors = { '0': [] };
+
+                    // Looping through the custom colors to repopulate the variable
+                    for (let x in document.getElementsByClassName('custom_colors_preview')) {
+                        // Continuing if its a number
+                        if (isNaN(x) === true) {
+                            continue;
+                        }
+
+                        // Pushing the colors to the array
+                        window.LSCustomColors[0].push(
+                            document
+                                .getElementsByClassName('custom_colors_preview')
+                            [x].getAttribute('data-custom-color')
+                        );
+                    }
+
+                    // Updating the local storage
+                    localStorage.setItem('custom_colors', JSON.stringify(window.LSCustomColors));
+
+                    // Making sure the add color button is displaying
+                    document.getElementById('custom_colors_add').style.display = 'inline-block';
+                };
+                document.getElementById('color_clear_single').addEventListener('mousedown', function () {
+                    clearSingleCustomColor();
+                });
+            </script>
+        </div>
+        <div class="color-picker-component w-embed w-script">
+            <script>
+                // Clear single selected color for touch mobile devices
+                let clearSingleCustomColorTouch = function (event) {
+                    if (event.target.className == 'custom_colors_preview') {
+                        const now = new Date().getTime();
+                        const timeSince = now - colorPicker.doubleTapTime;
+
+                        if (timeSince < 200 && timeSince > 0) {
+                            clearSingleCustomColor(event.target);
+                        } else {
+                            colorPicker.doubleTapTime = new Date().getTime();
+                        }
+                    }
+                };
+                document.getElementById('custom_colors_box').addEventListener(
+                    'touchstart',
+                    function () {
+                        clearSingleCustomColorTouch(event);
+                    },
+                    { passive: true }
+                );
+
+                // Clears all custom colors
+                let clearAllCustomColors = function () {
+                    // Clearing variable
+                    window.LSCustomColors = { '0': [] };
+
+                    // Looping through the custom colors to repopulate the variable
+                    while (document.getElementsByClassName('custom_colors_preview').length > 0) {
+                        document
+                            .getElementById('custom_colors_box')
+                            .removeChild(document.getElementsByClassName('custom_colors_preview')[0]);
+                    }
+
+                    // Updating the local storage
+                    localStorage.setItem('custom_colors', JSON.stringify(window.LSCustomColors));
+
+                    // Making sure the add color button is displaying
+                    document.getElementById('custom_colors_add').style.display = 'inline-block';
+                };
+                document.getElementById('color_clear_all').addEventListener('mousedown', function () {
+                    clearAllCustomColors();
+                });
+
+                /*
+                 * Hue Slider
+                 */
+
+                // Function to handle changes to the HUE slider
+                let colorSliderHandler = function (position) {
+                    // Defining the slider and dragger
+                    const sliderContainer = document.getElementById('color_slider');
+                    const sliderDragger = document.getElementById('color_slider_dragger');
+
+                    // Defining the X position
+                    let eventX = position - sliderContainer.getBoundingClientRect().left;
+
+                    // Making conditions so that the user don't drag outside the box
+                    if (eventX < 11) {
+                        eventX = 11;
+                    }
+
+                    if (eventX > 277) {
+                        eventX = 277;
+                    }
+
+                    // Updating the X property of the dragger
+                    sliderDragger.attributes.x.nodeValue = eventX;
+
+                    // Percentage of the dragger on the X axis
+                    const percent = ((eventX - 11) / 266) * 100;
+                    // Calculating the color
+                    // Max number for hue colors is 359, I find the percentage of this, from the percent variable
+                    // I take it away from the max number because the slider should work backwards
+                    const HColor = Math.round(359 - (359 / 100) * percent);
+
+                    // Updating the Hue value in the data object
+                    colorPicker.hue = HColor;
+
+                    // Full HSLA color
+                    const HSLA = `hsla(${HColor}, ${colorPicker.saturation}%, ${colorPicker.lightness}%, ${colorPicker.alpha})`;
+
+                    // Updating the color for the color preview
+                    document.getElementById('color_picked_preview').children[0].setAttribute('fill', HSLA);
+
+                    // Updating the Hue color in the Saturation and lightness box
+                    document
+                        .getElementById('saturation')
+                        .children[1].setAttribute('stop-color', `hsl(${HColor}, 100%, 50%)`);
+
+                    // Update the color text values
+                    updateColorValueInput();
+                };
+
+                /*
+                 * Mouse Events
+                 */
+
+                // Start the slider drag
+                document.getElementById('color_slider').addEventListener('mousedown', function (event) {
+                    // Updating the status in the data object
+                    colorPicker.sliderStatus = true;
+                    // Calling handler function
+                    colorSliderHandler(event.pageX);
+                });
+
+                // Moving the slider drag
+                document.addEventListener('mousemove', function (event) {
+                    // Checking that the drag has started
+                    if (colorPicker.sliderStatus === true) {
+                        // Calling handler function
+                        colorSliderHandler(event.pageX);
+                    }
+                });
+
+                // End the slider drag
+                document.addEventListener('mouseup', function () {
+                    // Checking that the drag has started
+                    if (colorPicker.sliderStatus === true) {
+                        // Updating the status in the data object
+                        colorPicker.sliderStatus = false;
+                    }
+                });
+
+                /*
+                 * Touch Events
+                 */
+
+                // Start the slider drag on touch
+                document.getElementById('color_slider').addEventListener(
+                    'touchstart',
+                    function (event) {
+                        // Updating the status
+                        colorPicker.sliderStatusTouch = true;
+                        // Calling the handler function
+                        colorSliderHandler(event.changedTouches[0].clientX);
+                    },
+                    { passive: true }
+                );
+
+                // Moving the slider drag on touch
+                document.addEventListener(
+                    'touchmove',
+                    function () {
+                        // Checking that the touch drag has started
+                        if (colorPicker.sliderStatusTouch === true) {
+                            // Prevent page scrolling
+                            event.preventDefault();
+                            // Calling the handler function
+                            colorSliderHandler(event.changedTouches[0].clientX);
+                        }
+                    },
+                    { passive: false }
+                );
+
+                // End the slider drag on touch
+                document.addEventListener('touchend', function () {
+                    // Checking that the touch drag has started
+                    if (colorPicker.sliderStatusTouch === true) {
+                        // Updating the status
+                        colorPicker.sliderStatusTouch = false;
+                    }
+                });
+            </script>
+        </div>
+        <div class="color-picker-component w-embed w-script">
+            <script>
+                /*
+                 * Opacity Slider
+                 */
+
+                // Function to handle changes to the opacity slider
+                let opacitySliderHandler = function (position) {
+                    // Defining the slider and dragger
+                    const sliderContainer = document.getElementById('opacity_slider');
+                    const sliderDragger = document.getElementById('opacity_slider_dragger');
+
+                    // Defining the X position
+                    let eventX = position - sliderContainer.getBoundingClientRect().left;
+
+                    // Making conditions so that the user don't drag outside the box
+                    if (eventX < 11) {
+                        eventX = 11;
+                    }
+
+                    if (eventX > 277) {
+                        eventX = 277;
+                    }
+
+                    // Update the X property of the dragger
+                    sliderDragger.attributes.x.nodeValue = eventX;
+
+                    // Percentage of the dragger on the X axis
+                    const percent = ((eventX - 11) / 266) * 100;
+
+                    // Finding the value for the percentage of 1
+                    let alpha = (1 / 100) * percent;
+                    // Rounding the value to the nearest 2 decimals
+                    alpha = Number(Math.round(alpha + 'e' + 2) + 'e-' + 2);
+
+                    // Updating the data objects
+                    colorPicker.alpha = alpha;
+
+                    // Full HSLA color
+                    const HSLA = `hsla(${colorPicker.hue}, ${colorPicker.saturation}%, ${colorPicker.lightness}%, ${alpha})`;
+
+                    // Updating the color for the color preview
+                    document.getElementById('color_picked_preview').children[0].setAttribute('fill', HSLA);
+
+                    // Update the color text values
+                    updateColorValueInput();
+                };
+
+                /*
+                 * Mouse Events
+                 */
+
+                // Start the slider drag for opacity
+                document.getElementById('opacity_slider').addEventListener('mousedown', function (event) {
+                    // Updating the status in the data object
+                    colorPicker.opacityStatus = true;
+                    // Calling the handler function
+                    opacitySliderHandler(event.pageX);
+                });
+
+                // Moving the slider drag for opacity
+                document.addEventListener('mousemove', function (event) {
+                    // Checking that the drag has started
+                    if (colorPicker.opacityStatus === true) {
+                        // Calling the handler function
+                        opacitySliderHandler(event.pageX);
+                    }
+                });
+
+                // End the slider drag
+                document.addEventListener('mouseup', function () {
+                    // Checking that the drag has started
+                    if (colorPicker.opacityStatus === true) {
+                        // Updating the status in the data object
+                        colorPicker.opacityStatus = false;
+                    }
+                });
+
+                /*
+                 * Touch Events
+                 */
+
+                // Start the slider drag on touch
+                document.getElementById('opacity_slider').addEventListener(
+                    'touchstart',
+                    function (event) {
+                        // Updating the status
+                        colorPicker.opacityStatusTouch = true;
+                        // Calling the handler function
+                        opacitySliderHandler(event.changedTouches[0].clientX);
+                    },
+                    { passive: true }
+                );
+
+                // Moving the slider drag on touch
+                document.addEventListener(
+                    'touchmove',
+                    function () {
+                        // Checking that the touch drag has started
+                        if (colorPicker.opacityStatusTouch === true) {
+                            // Prevent page scrolling
+                            event.preventDefault();
+                            // Calling the handler function
+                            opacitySliderHandler(event.changedTouches[0].clientX);
+                        }
+                    },
+                    { passive: false }
+                );
+
+                // End the slider drag on touch
+                document.addEventListener('touchend', function () {
+                    // Checking that the touch drag has started
+                    if (colorPicker.opacityStatusTouch === true) {
+                        // Updating the status
+                        colorPicker.opacityStatusTouch = false;
+                    }
+                });
+
+                /*
+                 * Saturation and Lightness Box
+                 */
+
+                // Function to handle changes to the saturation and lightness box
+                let colorBoxHandler = function (positionX, positionY, touch) {
+                    // Defining the box and dragger
+                    const boxContainer = document.getElementById('color_box');
+                    const boxDragger = document.getElementById('box_dragger');
+
+                    // Defining X and Y position, Y differently works with scroll so I make conditions for that
+                    let eventX = positionX - boxContainer.getBoundingClientRect().left;
+                    let eventY =
+                        touch === true
+                            ? positionY - boxContainer.getBoundingClientRect().top
+                            : positionY -
+                            boxContainer.getBoundingClientRect().top -
+                            document.getElementsByTagName('HTML')[0].scrollTop;
+
+                    // Making conditions so that the user don'-t drag outside the box
+                    if (eventX < 14) {
+                        eventX = 14;
+                    }
+
+                    if (eventX > 336) {
+                        eventX = 336;
+                    }
+
+                    if (eventY < 14) {
+                        eventY = 14;
+                    }
+
+                    if (eventY > 173) {
+                        eventY = 173;
+                    }
+
+                    // Changes X and Y properties of the dragger
+                    boxDragger.attributes.y.nodeValue = eventY;
+                    boxDragger.attributes.x.nodeValue = eventX;
+
+                    // Calculating the Saturation Percent value
+                    // SPercent is just the percent of where the dragger is on the X axis
+                    // 322 is the max number of pixels the dragger can move
+                    const SPercent = Math.round(((eventX - 15) / 322) * 100);
+
+                    // Calculating the X and Y Percent Values
+                    const percentX = 100 - SPercent / 2;
+                    const percentY = 100 - ((eventY - 15) / 159) * 100;
+
+                    // Calculating the LPercent
+                    // LPercent is the the X percentage of the of the Y percentage of the dragger
+                    let LPercent = Math.floor((percentY / 100) * percentX);
+
+                    // Applying the Saturation and Lightness to the data object
+                    colorPicker.saturation = SPercent;
+                    colorPicker.lightness = LPercent;
+
+                    // Full HSLA color
+                    const HSLA = `hsla(${colorPicker.hue}, ${SPercent}%, ${LPercent}%, ${colorPicker.alpha})`;
+
+                    // Applying the color to the color preview
+                    document.getElementById('color_picked_preview').children[0].setAttribute('fill', HSLA);
+
+                    // Update the color text values
+                    updateColorValueInput();
+                };
+            </script>
+        </div>
+        <div class="color-picker-component w-embed w-script">
+            <script>
+                /*
+                 * Mouse Events
+                 */
+
+                // Start box drag listener
+                document.getElementById('color_box').addEventListener('mousedown', function (event) {
+                    // Updating the status in the data object
+                    colorPicker.boxStatus = true;
+                    // Calling handler function
+                    colorBoxHandler(event.pageX, event.pageY);
+                });
+
+                // Moving box drag listener
+                document.addEventListener('mousemove', function (event) {
+                    // Checking that the drag has started
+                    if (colorPicker.boxStatus === true) {
+                        // Calling handler function
+                        colorBoxHandler(event.pageX, event.pageY);
+                    }
+                });
+
+                // End box drag listener
+                document.addEventListener('mouseup', function (event) {
+                    // Checking that the drag has started
+                    if (colorPicker.boxStatus === true) {
+                        // Updating the status in the data object
+                        colorPicker.boxStatus = false;
+                    }
+                });
+
+                /*
+                 * Touch Events
+                 */
+
+                // Start the box drag on touch
+                document.getElementById('color_box').addEventListener(
+                    'touchstart',
+                    function (event) {
+                        // Updating the status
+                        colorPicker.boxStatusTouch = true;
+                        // Calling the handler function
+                        colorBoxHandler(event.changedTouches[0].clientX, event.changedTouches[0].clientY, true);
+                    },
+                    { passive: true }
+                );
+
+                // Moving the box drag on touch
+                document.addEventListener(
+                    'touchmove',
+                    function () {
+                        // Checking that the touch drag has started
+                        if (colorPicker.boxStatusTouch === true) {
+                            // Prevent page scrolling
+                            event.preventDefault();
+                            // Calling the handler function
+                            colorBoxHandler(event.changedTouches[0].clientX, event.changedTouches[0].clientY, true);
+                        }
+                    },
+                    { passive: false }
+                );
+
+                // End box drag on touch
+                document.addEventListener('touchend', function () {
+                    // Checking that the touch drag has started
+                    if (colorPicker.boxStatusTouch === true) {
+                        // Calling the handler function
+                        colorPicker.boxStatusTouch = false;
+                    }
+                });
+
+                /*
+                 * Update Picker
+                 */
+
+                // Function to update color displays
+                let updateColorDisplays = function (color) {
+                    // Checking the color type that has been given
+                    if (color.substring(0, 1) == '#') {
+                        // Converting the color to HSLA
+                        color = hexAToRGBA(color, true);
+                    } else if (color.substring(0, 1) == 'r') {
+                        // Extracting the values
+                        const rgb = color.match(/[.?\d]+/g);
+                        // Making sure there is a alpha value
+                        rgb[3] = rgb[3] == undefined ? 1 : rgb[3];
+                        // Converting the color to HSLA
+                        color = RGBAToHSLA(rgb[0], rgb[1], rgb[2], rgb[3]);
+                    } else {
+                        // Extracting the values
+                        const hsl = color.match(/[.?\d]+/g);
+                        // Making sure there is a alpha value
+                        hsl[3] = hsl[3] == undefined ? 1 : hsl[3];
+                        // Formatting the value properly
+                        color = {
+                            h: hsl[0],
+                            s: hsl[1],
+                            l: hsl[2],
+                            a: hsl[3]
+                        };
+                    }
+
+                    // Updating the data object
+                    colorPicker.hue = color.h;
+                    colorPicker.saturation = color.s;
+                    colorPicker.lightness = color.l;
+                    colorPicker.alpha = color.a;
+
+                    // Updating the input values
+                    updateColorValueInput();
+
+                    // Updating color preview and box hue color initially
+                    document
+                        .getElementById('color_picked_preview')
+                        .children[0].setAttribute('fill', `hsla(${color.h}, ${color.s}%, ${color.l}%, ${color.a}`);
+
+                    // Updating the Hue color in the Saturation and lightness box
+                    document
+                        .getElementById('saturation')
+                        .children[1].setAttribute('stop-color', `hsl(${color.h}, 100%, 50%)`);
+
+                    // Color box (saturation and lightness) config
+                    // Defining the box and dragger
+                    const boxDragger = document.getElementById('box_dragger');
+
+                    let x, y;
+
+                    // Calculating y value
+                    const percentY = 100 - (color.l / (100 - color.s / 2)) * 100;
+                    y = (159 / 100) * percentY + 14;
+
+                    // Calculating x value
+                    x = (322 / 100) * color.s + 14;
+
+                    // Making changes the the UI
+                    boxDragger.attributes.x.nodeValue = x;
+                    boxDragger.attributes.y.nodeValue = y;
+
+                    // Hue slider config
+                    // Defining the hue slider and dragger
+                    const hueSliderDragger = document.getElementById('color_slider_dragger');
+
+                    // Calculating x value
+                    let percentHue = 100 - (color.h / 359) * 100;
+                    let hueX = (266 / 100) * percentHue + 11;
+
+                    // Making changes the the UI
+                    hueSliderDragger.attributes.x.nodeValue = hueX;
+
+                    // Alpha slider config
+                    // Defining the opacity slider and dragger
+                    const alphaSliderDragger = document.getElementById('opacity_slider_dragger');
+
+                    // Calculating x value
+                    let alphaX = (266 / 100) * (color.a * 100) + 11;
+
+                    // Making changes the the UI
+                    alphaSliderDragger.attributes.x.nodeValue = alphaX;
+                };
+
+                // Update the color value inputs
+                let updateColorValueInput = function () {
+                    // Checking the value color type the user has selected
+                    if (colorPicker.colorTypeStatus == 'HEXA') {
+                        // Converting the value
+                        const hexValue = HSLAToRGBA(
+                            colorPicker.hue,
+                            colorPicker.saturation,
+                            colorPicker.lightness,
+                            colorPicker.alpha,
+                            true
+                        );
+
+                        // Applying the value to the input
+                        document.getElementById('hex_input').value = hexValue;
+                    } else if (colorPicker.colorTypeStatus == 'RGBA') {
+                        // Converting the value
+                        const RGBAValue = HSLAToRGBA(
+                            colorPicker.hue,
+                            colorPicker.saturation,
+                            colorPicker.lightness,
+                            colorPicker.alpha
+                        );
+
+                        // Applying the value to the inputs
+                        document.getElementsByClassName('rgba_input')[0].value = RGBAValue.r;
+                        document.getElementsByClassName('rgba_input')[1].value = RGBAValue.g;
+                        document.getElementsByClassName('rgba_input')[2].value = RGBAValue.b;
+                        document.getElementsByClassName('rgba_input')[3].value = RGBAValue.a;
+                    } else {
+                        // Applying the value to the inputs
+                        document.getElementsByClassName('hsla_input')[0].value = colorPicker.hue;
+                        document.getElementsByClassName('hsla_input')[1].value = colorPicker.saturation;
+                        document.getElementsByClassName('hsla_input')[2].value = colorPicker.lightness;
+                        document.getElementsByClassName('hsla_input')[3].value = colorPicker.alpha;
+                    }
+                };
+            </script>
+        </div>
+    </div>
+    <header id="hero-overlay" class="hero-overlay wf-section">
+        <div class="centered-container w-container">
+            <h1 class="heading-81">Your E-Bike.<br />Your Way.</h1>
+            <p class="paragraph-41">Completely customise our best-selling Zoomo Sport, Zoomo Zero, or our latest Zoomo
+                One  e-bikes to fit your needs. Add your brand colour, logo and hardware to ensure your next fleet is
+                <br />as unique as the business you run. Have questions? Get in touch with our support team at
+                <br />hello@ridezoomo.com. Our customisable e-bike feature is currently available across all regions.
+            </p>
+            <div class="div-block-523"><a href="#" class="button-57 w-button">Let&#x27;s get started</a></div>
+        </div>
+    </header>
+    <div class="section-104 wf-section">
+        <div class="w-container">
+            <h2 class="heading-82">1. Pick your bike1. Pick your bike</h2>
+            <p class="paragraph-42">Available models to customise currently include the Zoomo Sport, Zoomo Zero, and
+                Zoomo One. You can find more information about each model under e-bikes in our navigation bar.</p>
+            <div class="w-row">
+                <div class="w-col w-col-4">
+                    <div class="div-block-524"><img
+                            src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/622f0abc72c5790ee119c74d_bike1-3dmodel.jpg"
+                            loading="lazy" sizes="100vw"
+                            srcset="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/622f0abc72c5790ee119c74d_bike1-3dmodel-p-500.jpeg 500w, https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/622f0abc72c5790ee119c74d_bike1-3dmodel.jpg 534w"
+                            alt="" />
+                        <h4 class="heading-84">Zoomo Sport</h4>
+                    </div>
+                </div>
+                <div class="w-col w-col-4"></div>
+                <div class="w-col w-col-4"></div>
+            </div>
+        </div>
+    </div>
+    <section id="cards-section" class="cards-section wf-section">
+        <div class="container-61 w-container">
+            <div class="html-style w-embed">
+                <link rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+                <style>
+                    .radio-field-bike input[type="radio"]:checked~.overlay {
+                        opacity: 1;
+                    }
+
+                    .radio-field-bike input[type="radio"]:checked~.radio-title {
+                        color: #fff;
+                    }
+
+                    .radio-field-bike input[type="radio"]:checked~.radio-button-add {
+                        border: 4px solid #ffff64;
+                        background-color: #ffff64;
+                    }
+
+                    .button:hover {
+                        background-color: #ffff64;
+                    }
+
+                    .button:hover .button-text {
+                        color: #000;
+                    }
+
+                    .button.next .button-text:after {
+                        content: '\f061';
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 800;
+                        margin-left: 4px;
+                    }
+
+                    .button.previous .button-text:before {
+                        content: '\f060';
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 800;
+                        margin-right: 4px;
+                    }
+
+                    .form-list-item .form-item {}
+
+                    .form-list-item .form-item:before {
+                        content: '';
+                        background-image: url(https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/62393edc881c5c6765581296_tick-3dmodel.png);
+                        width: 28px;
+                        height: 28px;
+                        background-size: cover;
+                        position: absolute;
+                        left: 0;
+                        top: calc(50% - 14px);
+                    }
+
+                    .form-checkbox-field input[type=checkbox] {}
+
+                    .form-checkbox-field .form-checkbox-label:before {
+                        content: '';
+                        width: 28px;
+                        height: 28px;
+                        display: inline-block;
+                        background-color: #b7b7b7;
+                        margin-right: 8px;
+                        padding: 4px;
+                    }
+
+                    .form-checkbox-field input[type=checkbox]:checked~.form-checkbox-label:before {
+                        background-image: url(https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/62393edc881c5c6765581296_tick-3dmodel.png);
+                        background-size: 80% 80%;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+
+                    .form-checkbox-field.checkbox-image-field .checkbox-image {
+                        position: absolute;
+                        left: calc(36px + 36px);
+                    }
+
+                    .form-checkbox-field.checkbox-image-field .form-checkbox-label:before {
+                        margin-right: calc(8px + 36px + 36px + 36px);
+                    }
+
+                    /* Number Field */
+                    .form-number-field {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .form-number-field .number-label {
+                        margin: 0;
+                        margin-right: 30px;
+                    }
+
+                    .form-number-field .number-controller-count {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .form-number-field .number-controller {
+                        display: flex;
+                        cursor: pointer;
+                    }
+
+                    .form-number-field .number-controller>i {
+                        color: #b7b7b7;
+                        background-color: #000000;
+                        border-radius: 100%;
+                        font-size: 24px;
+                    }
+
+                    .form-number-field .number-count {
+                        width: 40px;
+                        display: flex;
+                        justify-content: center;
+                        margin: 0px 10px;
+                    }
+                </style>
+            </div>
+            <div class="form-wrapper w-form">
+                <form id="email-form" name="email-form" data-name="Email Form" method="get">
+                    <div data-delay="4000" data-animation="outin" class="slider w-slider" data-autoplay="false"
+                        data-easing="ease-out" data-hide-arrows="true" data-disable-swipe="true" data-autoplay-limit="0"
+                        data-nav-spacing="3" data-duration="240" data-infinite="false">
+                        <div class="slider-container w-slider-mask">
+                            <div class="slide w-slide">
+                                <div class="slider-content-wrap">
+                                    <div class="form-content">
+                                        <div class="form-title-wrap">
+                                            <div class="form-section-title">1. Pick your bike</div>
+                                            <p class="form-description">Available models to customise currently include
+                                                the Zoomo Sport. Zoomo Zero, and Zoomo One. You can find more
+                                                information about each model under e-bikes in our navigation bar.</p>
+                                        </div>
+                                        <div class="radio_wrap"><label
+                                                class="radio-field radio-field-bike w-radio"><input type="radio"
+                                                    name="pickyourbike" id="radio-bike-1" value="Zoomo Sport"
+                                                    data-name="pickyourbike" checked=""
+                                                    class="w-form-formradioinput radio-button w-radio-input" />
+                                                <div class="overlay overlay-bike"></div><a href="#"
+                                                    class="radio-button-add w-button">+</a><span
+                                                    class="radio-title w-form-label" for="radio-bike-1">Zoomo
+                                                    Sport</span><img
+                                                    src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/622f0abc72c5790ee119c74d_bike1-3dmodel.jpg"
+                                                    loading="lazy"
+                                                    sizes="(max-width: 479px) 100vw, (max-width: 767px) 28vw, (max-width: 991px) 29vw, 288.3374938964844px"
+                                                    srcset="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/622f0abc72c5790ee119c74d_bike1-3dmodel-p-500.jpeg 500w, https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/622f0abc72c5790ee119c74d_bike1-3dmodel.jpg 534w"
+                                                    alt="" class="radio-image" />
+                                            </label><label class="radio-field radio-field-bike w-radio"><input
+                                                    type="radio" name="pickyourbike" id="radio-bike-2"
+                                                    value="Zoomo Zero" data-name="pickyourbike"
+                                                    class="w-form-formradioinput radio-button w-radio-input" />
+                                                <div class="overlay overlay-bike"></div><a href="#"
+                                                    class="radio-button-add w-button">+</a><span
+                                                    class="radio-title w-form-label" for="radio-bike-2">Zoomo
+                                                    Zero</span><img
+                                                    src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/622f0abdfc363c66dcdf5d27_bike2-3dmodel.jpg"
+                                                    loading="lazy"
+                                                    sizes="(max-width: 479px) 100vw, (max-width: 767px) 28vw, (max-width: 991px) 29vw, 288.3374938964844px"
+                                                    srcset="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/622f0abdfc363c66dcdf5d27_bike2-3dmodel-p-500.jpeg 500w, https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/622f0abdfc363c66dcdf5d27_bike2-3dmodel.jpg 534w"
+                                                    alt="" class="radio-image" />
+                                            </label><label class="radio-field radio-field-bike w-radio"><input
+                                                    type="radio" name="pickyourbike" id="radio-bike-3" value="Zoomo One"
+                                                    data-name="pickyourbike"
+                                                    class="w-form-formradioinput radio-button w-radio-input" />
+                                                <div class="overlay overlay-bike"></div><a href="#"
+                                                    class="radio-button-add w-button">+</a><span
+                                                    class="radio-title w-form-label" for="radio-bike-3">Zoomo
+                                                    One</span><img
+                                                    src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/62315eda10fd2d159d16008c_bike3-3dmodel-2.jpg"
+                                                    loading="lazy"
+                                                    sizes="(max-width: 479px) 100vw, (max-width: 767px) 28vw, (max-width: 991px) 29vw, 288.3374938964844px"
+                                                    srcset="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/62315eda10fd2d159d16008c_bike3-3dmodel-2-p-500.jpeg 500w, https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/62315eda10fd2d159d16008c_bike3-3dmodel-2.jpg 534w"
+                                                    alt="" class="radio-image" />
+                                            </label></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide w-slide">
+                                <div class="slider-content-wrap">
+                                    <div class="form-content">
+                                        <div class="form-title-wrap">
+                                            <div class="form-section-title">2. Choose your colour</div>
+                                            <p class="form-description">Leave the e—bike colour as is and simply add
+                                                your logo to our e—bike.</p>
+                                        </div>
+                                        <div class="form-columns w-row">
+                                            <div class="form-column w-col w-col-7">
+                                                <div class="color-picker w-embed w-script">
+                                                    <style>
+                                                        #color_picker {
+                                                            display: block;
+                                                            position: relative;
+                                                            min-height: unset;
+                                                            top: unset;
+                                                            left: unset;
+                                                            margin: 0 auto;
+                                                            box-shadow: unset;
+                                                            background-color: #f8f7f7;
+                                                        }
+
+                                                        #custom_colors {
+                                                            display: none;
+                                                        }
+
+                                                        #switch_color_type {
+                                                            display: none;
+                                                        }
+
+                                                        #hexa {
+                                                            display: flex;
+                                                            align-items: center;
+                                                            justify-content: center;
+                                                        }
+
+                                                        #hex_input {
+                                                            order: 2;
+                                                        }
+
+                                                        #hexa label {
+                                                            margin: 0;
+                                                            margin-right: 18px;
+                                                        }
+
+                                                        #color_picker #color_text_values {
+                                                            border: unset;
+                                                        }
+                                                    </style>
+
+                                                    <section id="picker_container"></section>
+
+                                                </div>
+                                                <input type="text" class="form-field-color-picker w-input"
+                                                    maxlength="256" name="field-color-picker"
+                                                    data-name="field-color-picker" placeholder="Example Text"
+                                                    id="field-color-picker" required="" />
+                                            </div>
+                                            <div class="form-column w-col w-col-5"><img
+                                                    src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/62393c2985ee81bf0fc94b6e_step4-3dmodel.png"
+                                                    loading="lazy"
+                                                    sizes="(max-width: 479px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 38vw, 380px"
+                                                    srcset="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/62393c2985ee81bf0fc94b6e_step4-3dmodel-p-500.png 500w, https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/62393c2985ee81bf0fc94b6e_step4-3dmodel.png 742w"
+                                                    alt="" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide w-slide">
+                                <div class="slider-content-wrap">
+                                    <div class="form-content">
+                                        <div class="form-title-wrap">
+                                            <div class="form-section-title">3. Upload your logo</div>
+                                        </div>
+                                        <div class="form-columns w-row">
+                                            <div class="form-column w-col w-col-7">
+                                                <div class="text-block-162"><strong
+                                                        class="bold-text"><em>zoomo</em></strong> sport</div>
+                                                <p class="form-description">Upload a transparent PNG file of your logo
+                                                    to be displayed on the body of the e-bike.<br /></p>
+                                                <p class="form-description">Recommended sizing requirements for PNG
+                                                    files are 1080x1920.<br /></p>
+                                                <p class="form-description-2">Note: if you would like to upload multiple
+                                                    logos please contact our support team.</p>
+                                                <div class="w-file-upload">
+                                                    <div class="default-state w-file-upload-default"><input type="file"
+                                                            class="w-file-upload-input" accept="" name="file"
+                                                            data-name="File" aria-hidden="true" id="upload-logo"
+                                                            tabindex="-1" /><label for="file" role="button" tabindex="0"
+                                                            class="button w-file-upload-label">
+                                                            <div class="text-block-164">Upload logo here</div>
+                                                        </label>
+                                                        <div class="text-block-163 w-file-upload-info">Max file size
+                                                            10MB.</div>
+                                                    </div>
+                                                    <div tabindex="-1" class="w-file-upload-uploading w-hidden">
+                                                        <div class="w-file-upload-uploading-btn"><svg
+                                                                class="w-icon-file-upload-uploading"
+                                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"
+                                                                ariaHidden="true">
+                                                                <path fill="currentColor" opacity=".2"
+                                                                    d="M15 30a15 15 0 1 1 0-30 15 15 0 0 1 0 30zm0-3a12 12 0 1 0 0-24 12 12 0 0 0 0 24z">
+                                                                </path>
+                                                                <path fill="currentColor" opacity=".75"
+                                                                    d="M0 15A15 15 0 0 1 15 0v3A12 12 0 0 0 3 15H0z">
+                                                                    <animateTransform attributeName="transform"
+                                                                        attributeType="XML" dur="0.6s" from="0 15 15"
+                                                                        repeatCount="indefinite" to="360 15 15"
+                                                                        type="rotate"></animateTransform>
+                                                                </path>
+                                                            </svg>
+                                                            <div class="w-inline-block">Uploading...</div>
+                                                        </div>
+                                                    </div>
+                                                    <div tabindex="-1" class="w-file-upload-success w-hidden">
+                                                        <div class="w-file-upload-file">
+                                                            <div class="w-file-upload-file-name">fileuploaded.jpg</div>
+                                                            <div aria-label="Remove file" role="button" tabindex="0"
+                                                                class="w-file-remove-link">
+                                                                <div class="w-icon-file-upload-remove"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div tabindex="-1" class="w-file-upload-error w-hidden">
+                                                        <div class="w-file-upload-error-msg"
+                                                            data-w-size-error="Upload failed. Max size for files is 10 MB."
+                                                            data-w-type-error="Upload failed. Invalid file type."
+                                                            data-w-generic-error="Upload failed. Something went wrong. Please retry.">
+                                                            Upload failed. Max size for files is 10 MB.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-column w-col w-col-5"><img
+                                                    src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/62393c2985ee81bf0fc94b6e_step4-3dmodel.png"
+                                                    loading="lazy"
+                                                    sizes="(max-width: 479px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 38vw, 380px"
+                                                    srcset="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/62393c2985ee81bf0fc94b6e_step4-3dmodel-p-500.png 500w, https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/62393c2985ee81bf0fc94b6e_step4-3dmodel.png 742w"
+                                                    alt="" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide w-slide">
+                                <div class="slider-content-wrap">
+                                    <div class="form-content">
+                                        <div class="form-title-wrap">
+                                            <div class="form-section-title">4. Review your bike</div>
+                                        </div>
+                                        <div class="form-columns w-row">
+                                            <div class="form-column w-col w-col-7">
+                                                <p class="form-description">This information will be sent to our support
+                                                    team.<br />Before approving please make sure:</p>
+                                                <ul role="list" class="form-list-item">
+                                                    <li class="form-item">The logo file uploaded is a PNG file on a
+                                                        transparent background</li>
+                                                    <li class="form-item">The logo image is clear and does not appear
+                                                        blurry</li>
+                                                    <li class="form-item">You have selected the correct colour</li>
+                                                </ul><label class="w-checkbox form-checkbox-field"><input
+                                                        type="checkbox" name="Checkbox" id="Checkbox"
+                                                        data-name="Checkbox" checked=""
+                                                        class="w-checkbox-input form-checkbox-input" /><span
+                                                        class="form-checkbox-label w-form-label" for="Checkbox">I have
+                                                        reviewed and approved my design</span></label>
+                                            </div>
+                                            <div class="form-column w-col w-col-5"><img
+                                                    src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/62393c2985ee81bf0fc94b6e_step4-3dmodel.png"
+                                                    loading="lazy"
+                                                    sizes="(max-width: 479px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 38vw, 380px"
+                                                    srcset="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/62393c2985ee81bf0fc94b6e_step4-3dmodel-p-500.png 500w, https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/62393c2985ee81bf0fc94b6e_step4-3dmodel.png 742w"
+                                                    alt="" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide w-slide">
+                                <div class="slider-content-wrap">
+                                    <div class="form-content">
+                                        <div class="form-title-wrap">
+                                            <div class="form-section-title">5. Choose your hardware</div>
+                                            <p class="form-description">Additional upgrades. These hardware choices will
+                                                boost your e-bike.</p>
+                                        </div>
+                                        <div class="form-columns w-row">
+                                            <div class="form-column w-col w-col-7"><label
+                                                    class="w-checkbox form-checkbox-field checkbox-image-field"><input
+                                                        type="checkbox" id="checkbox-2" name="checkbox-2"
+                                                        data-name="Checkbox 2"
+                                                        class="w-checkbox-input form-checkbox-input" /><img
+                                                        src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/6239944cb1a982140b1916fb_Front-rack-3dmodel.png"
+                                                        loading="lazy" alt="" class="checkbox-image" /><span
+                                                        class="form-checkbox-label w-form-label" for="checkbox-2">Front
+                                                        rack</span></label><label
+                                                    class="w-checkbox form-checkbox-field checkbox-image-field"><input
+                                                        type="checkbox" id="checkbox-2" name="checkbox-2"
+                                                        data-name="Checkbox 2"
+                                                        class="w-checkbox-input form-checkbox-input" /><img
+                                                        src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/6239944b0ac56983831e8852_rear-rack-3dmodel.png"
+                                                        loading="lazy" alt="" class="checkbox-image" /><span
+                                                        class="form-checkbox-label w-form-label" for="checkbox-2">Rear
+                                                        rack</span></label><label
+                                                    class="w-checkbox form-checkbox-field checkbox-image-field"><input
+                                                        type="checkbox" id="checkbox-2" name="checkbox-2"
+                                                        data-name="Checkbox 2"
+                                                        class="w-checkbox-input form-checkbox-input" /><img
+                                                        src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/6239944cb2dd8151d3a38f6e_rear-basket-3dmodel.png"
+                                                        loading="lazy" alt="" class="checkbox-image" /><span
+                                                        class="form-checkbox-label w-form-label" for="checkbox-2">Rear
+                                                        basket</span></label>
+                                                <div class="form-number-field"><label for="quantity-of-bikes"
+                                                        id="quantity-of-bikes" class="number-label">Quantity of
+                                                        bikes</label>
+                                                    <div class="number-controller-count"></div><input type="number"
+                                                        class="number-field w-input" maxlength="256"
+                                                        name="quantity-of-bikes" data-name="quantity-of-bikes"
+                                                        placeholder="" id="quantity-of-bikes" />
+                                                </div>
+                                            </div>
+                                            <div class="form-column w-col w-col-5"><img
+                                                    src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/62393c2985ee81bf0fc94b6e_step4-3dmodel.png"
+                                                    loading="lazy"
+                                                    sizes="(max-width: 479px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 38vw, 380px"
+                                                    srcset="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/62393c2985ee81bf0fc94b6e_step4-3dmodel-p-500.png 500w, https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/62393c2985ee81bf0fc94b6e_step4-3dmodel.png 742w"
+                                                    alt="" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide w-slide">
+                                <div class="slider-content-wrap">
+                                    <div class="form-content">
+                                        <div class="form-title-wrap">
+                                            <div class="form-section-title">6. Get a Quote</div>
+                                            <p class="form-description">Your information has been passed on to our
+                                                support team and they will reach out shortly with more information.</p>
+                                            <p class="form-description-2">Please note we have a minimum order quantity
+                                                of 20 e-bikes and a lead time of six months for customised wrapping and
+                                                branding.</p>
+                                        </div>
+                                        <div class="form-wrap-full">
+                                            <div class="form-wrap"><label for="Field-Name" id="Field-Name"
+                                                    class="field-title">First/Last Name*</label><input type="text"
+                                                    class="field-input w-input" maxlength="256" name="field"
+                                                    data-name="Field" placeholder="" id="Field-Name" required="" />
+                                            </div>
+                                            <div class="form-wrap"><label for="Field-Name" id="Field-Name"
+                                                    class="field-title">Business Name*</label><input type="text"
+                                                    class="field-input w-input" maxlength="256" name="field"
+                                                    data-name="Field" placeholder="" id="Field-Name" required="" />
+                                            </div>
+                                            <div class="form-wrap"><label for="Field-Name" id="Field-Name"
+                                                    class="field-title">Email Address*</label><input type="text"
+                                                    class="field-input w-input" maxlength="256" name="field"
+                                                    data-name="Field" placeholder="" id="Field-Name" required="" />
+                                            </div>
+                                            <div class="form-wrap"><label for="Field-Name" id="Field-Name"
+                                                    class="field-title">Region*</label><input type="text"
+                                                    class="field-input w-input" maxlength="256" name="field"
+                                                    data-name="Field" placeholder="" id="Field-Name" required="" />
+                                            </div><input type="submit" value="Get a quote" data-wait="Please wait..."
+                                                class="submit button w-button" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="previous button w-slider-arrow-left">
+                            <div class="button-text">Previous</div>
+                        </div>
+                        <div class="next button w-slider-arrow-right">
+                            <div class="button-text" id="next-2">Next Step</div>
+                        </div>
+                        <div class="hidden w-slider-nav"></div>
+                    </div>
+                </form>
+                <div class="w-form-done">
+                    <div>Thank you! Your submission has been received!</div>
+                </div>
+                <div class="w-form-fail">
+                    <div>Oops! Something went wrong while submitting the form.</div>
+                </div>
+            </div>
+            <div class="jquery w-embed w-script">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/attrchange/2.0.1/attrchange.min.js"></script>
+                <script>
+                    function trigger_remove_file() {
+                        setTimeout(() => {
+                            if (jQuery('#upload-logo')[0].files.length > 0) {
+                                jQuery('.next.button').css({ "pointer-events": "all", "opacity": "1" });
+                            } else {
+                                jQuery('.next.button').css({ "pointer-events": "none", "opacity": ".5" });
+                            }
+                        }, 500);
+                    }
+                    function trigger_add_file() {
+                        jQuery(document).ajaxComplete(function () {
+                            if (jQuery('#upload-logo')[0].files.length > 0) {
+                                jQuery('.next.button').css({ "pointer-events": "all", "opacity": "1" });
+                            } else {
+                                jQuery('.next.button').css({ "pointer-events": "none", "opacity": ".5" });
+                            }
+                        })
+                    }
+                    jQuery(document).ready(function ($) {
+                        $('#upload-logo').attr('onchange', 'trigger_add_file();');
+                        $('.w-file-remove-link').attr('onclick', 'trigger_remove_file();');
+                        $('.form-number-field .number-controller-count').append('<span class="btn-minus number-controller number-controller-minus"><i class="fa-solid fa-circle-minus"></i></span>');
+                        $('.form-number-field .number-controller-count').append('<span class="number-count">0</span>');
+                        $('.form-number-field .number-controller-count').append('<span class="btn-plus number-controller number-controller-pluss"><i class="fa-solid fa-circle-plus"></i></span>');
+                        var _elmNum = $('.form-number-field input[type="number"]');
+                        _elmNum.attr('min', 0);
+                        if (_elmNum.val() == '') { _elmNum.val(0); }
+                        $('.form-number-field span.number-count').text(_elmNum.val());
+                        $('.btn-minus').click(function () {
+                            var qfield = $(this).closest('.form-number-field').find('input');
+                            var value = Number(qfield.val());
+                            var step = 1;
+                            if (qfield.is('[step]')) {
+                                step = qfield.attr('step') === 'any' ? 1 : Number(qfield.attr('step'));
+                            }
+                            if (qfield.is('[min]') && Number(qfield.attr('min')) < value) {
+                                qfield.val(value - step).change();
+                                $('.form-number-field span.number-count').text(value - step);
+                            }
+                            if (!qfield.is('[min]')) {
+                                qfield.val(value - step).change();
+                                $('.form-number-field span.number-count').text(value - step);
+                            }
+                            console.log(value);
+                        });
+                        $('.btn-plus').click(function () {
+                            var qfield = $(this).closest('.form-number-field').find('input');
+                            var value = Number(qfield.val());
+                            var step = 1;
+                            if (qfield.is('[step]')) {
+                                step = qfield.attr('step') === 'any' ? 1 : Number(qfield.attr('step'));
+                            }
+                            if (qfield.is('[max]') && Number(qfield.attr('max')) > value) {
+                                qfield.val(value + step).change();
+                                $('.form-number-field span.number-count').text(value + step);
+                            }
+                            if (!qfield.is('[max]')) {
+                                qfield.val(value + step).change();
+                                $('.form-number-field span.number-count').text(value + step);
+                            }
+                            console.log(value);
+                        });
+                        var slide_index = 0;
+                        $(".w-slide").eq(0).attrchange({
+                            trackValues: true,
+                            callback: function (event) {
+                                if (event.attributeName == "style") {
+                                    slide_index = Number($(".w-slider-dot.w-active").index()) + 1;
+                                    if (slide_index == 3 && $('#upload-logo')[0].files.length == 0) {
+                                        $('.next.button').css({ "pointer-events": "none", "opacity": ".5" });
+                                    } else {
+                                        $('.next.button').css({ "pointer-events": "all", "opacity": "1" });
+                                    }
+                                }
+                            }
+                        });
+
+                    });
+
+                </script>
+            </div>
+            <div class="w-embed w-script">
+                <script src="/zoomo/colorjoe/colorjoe.js"></script>
+                <script src="https://mittonvine.github.io/zoomo/build/bundle.js"></script>
+            </div>
+        </div>
+        <div class="w-embed"></div>
+    </section>
+    <div class="footer-2021 wf-section">
+        <div class="div-block-451">
+            <div id="w-node-_9778315e-83a8-c2ab-8929-3bcf1ab0a1fe-1ab0a1fc" class="footer-logo-holder-line"><img
+                    src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/6024dcc37fb6d555eb6146c0_Zoomo%20Lockup%20white.svg"
+                    loading="lazy" alt="Zoomo logo" class="footer-logo" /></div>
+            <div></div>
+            <div class="footer-links-holder">
+                <div class="footer-column-title">Directory</div><a href="http://app.ridezoomo.com"
+                    class="footer-text-link">Rider hub</a><a href="/au/bikes" class="footer-text-link">Buy a zoomo</a><a
+                    href="/au/blog" class="footer-text-link">Blog</a><a href="/au/contact"
+                    class="footer-text-link">COntact us</a><a href="http://app.ridezoomo.com" target="_blank"
+                    class="footer-text-link">Report a theft</a><a href="/au/partnerships" class="footer-text-link">Uber
+                    Eats</a><a href="/au/contact" class="footer-text-link">FAQs</a>
+            </div>
+            <div class="footer-links-holder">
+                <div class="footer-column-title">Company</div><a href="/au/about-us" class="footer-text-link">About
+                    Us</a><a href="/au/partnerships" class="footer-text-link">Partnerships</a><a
+                    href="https://www.ridezoomo.com/location/australia" class="footer-text-link">Locations</a><a
+                    href="https://apply.workable.com/zoomo/" target="_blank" class="footer-text-link">Careers</a><a
+                    href="/press" class="footer-text-link">Media</a><a href="/privacy"
+                    class="footer-text-link">Privacy</a><a href="/terms" class="footer-text-link">Terms</a>
+            </div>
+            <div class="footer-links-holder">
+                <div class="footer-column-title">Social</div><a href="https://www.facebook.com/ridezoomo/"
+                    target="_blank" class="footer-text-link">Facebook</a><a
+                    href="https://www.instagram.com/ride_zoomo/?hl=en" target="_blank"
+                    class="footer-text-link">Instagram</a><a href="https://au.linkedin.com/company/ridezoomo"
+                    target="_blank" class="footer-text-link">Linkedin</a><a href="https://twitter.com/ridezoomo"
+                    target="_blank" class="footer-text-link">Twitter</a>
+            </div>
+            <div id="w-node-_9778315e-83a8-c2ab-8929-3bcf1ab0a22a-1ab0a1fc" class="div-block-453"></div>
+            <div id="w-node-_9778315e-83a8-c2ab-8929-3bcf1ab0a22b-1ab0a1fc">
+                <div class="home-descriptive-text grey">Zoomo acknowledges Aboriginal and Torres Strait Islander peoples
+                    as the First Australians and Traditional Custodians of the lands where we live, learn, and work. We
+                    pay our respects to the traditional owners past, present and emerging, and to the Gadigal people of
+                    the Eora nation, where our headquarters are located.</div>
+                <div class="div-block-454"><img
+                        src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/6114ae1ddd8c321aa7bbd6ec_2880px-Australian_Aboriginal_Flag.svg.png"
+                        loading="lazy"
+                        sizes="(max-width: 479px) 86vw, (max-width: 1279px) 40px, (max-width: 1439px) 3vw, 40px"
+                        srcset="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/6114ae1ddd8c321aa7bbd6ec_2880px-Australian_Aboriginal_Flag.svg-p-500.png 500w, https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/6114ae1ddd8c321aa7bbd6ec_2880px-Australian_Aboriginal_Flag.svg-p-800.png 800w, https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/6114ae1ddd8c321aa7bbd6ec_2880px-Australian_Aboriginal_Flag.svg-p-1080.png 1080w, https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/6114ae1ddd8c321aa7bbd6ec_2880px-Australian_Aboriginal_Flag.svg-p-1600.png 1600w, https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/6114ae1ddd8c321aa7bbd6ec_2880px-Australian_Aboriginal_Flag.svg-p-2000.png 2000w, https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/6114ae1ddd8c321aa7bbd6ec_2880px-Australian_Aboriginal_Flag.svg.png 2880w"
+                        alt="" class="image-189" /><img
+                        src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/6114ae4834b9b51944665f9d_2880px-Flag_of_the_Torres_Strait_Islanders.svg.png"
+                        loading="lazy"
+                        sizes="(max-width: 479px) 86vw, (max-width: 1279px) 40px, (max-width: 1439px) 3vw, 40px"
+                        srcset="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/6114ae4834b9b51944665f9d_2880px-Flag_of_the_Torres_Strait_Islanders.svg-p-500.png 500w, https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/6114ae4834b9b51944665f9d_2880px-Flag_of_the_Torres_Strait_Islanders.svg-p-800.png 800w, https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/6114ae4834b9b51944665f9d_2880px-Flag_of_the_Torres_Strait_Islanders.svg-p-1080.png 1080w, https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/6114ae4834b9b51944665f9d_2880px-Flag_of_the_Torres_Strait_Islanders.svg-p-1600.png 1600w, https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/6114ae4834b9b51944665f9d_2880px-Flag_of_the_Torres_Strait_Islanders.svg-p-2000.png 2000w, https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/6114ae4834b9b51944665f9d_2880px-Flag_of_the_Torres_Strait_Islanders.svg-p-2600.png 2600w, https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/6114ae4834b9b51944665f9d_2880px-Flag_of_the_Torres_Strait_Islanders.svg.png 2880w"
+                        alt="" class="image-189" /></div>
+            </div>
+            <div class="div-block-459">
+                <div class="home-descriptive-text grey">Designed and engineered<br /> in Sydney, Australia</div>
+            </div>
+            <div>
+                <div class="home-descriptive-text grey">© Zoomo 2021<br />All rights reserved.</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5ef41bb456726c3a2ea9838a"
+        type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous"></script>
+    <script src="https://assets-global.website-files.com/5ef41bb456726c3a2ea9838a/js/zoomo-live.f7d6e3ac8.js"
+        type="text/javascript"></script>
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        _linkedin_partner_id = "3663257";
+        window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+        window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+        (function () {
+            var s = document.getElementsByTagName("script")[0];
+            var b = document.createElement("script");
+            b.type = "text/javascript"; b.async = true;
+            b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+            s.parentNode.insertBefore(b, s);
+        })();
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none;" alt=""
+            src="https://px.ads.linkedin.com/collect/?pid=3663257&fmt=gif" />
+    </noscript>
+
+    <script>
+        (function (g, e, o, t, a, r, ge, tl, y) {
+            ge = 0; y = []; r = []; tl = function () {
+                if (ge < 1) {
+                    a = Math.round(new Date().getTime() / (86400000 * 10)) - 1837 + ge; r[ge] = 'g' + 198084335 * a + '.co'; t = g.getElementsByTagName(e)[0];
+                    y[ge] = g.createElement(e); y[ge].async = true; y[ge].src = '//' + r[ge] + '/ga?id=-MGqQRB64h0-ZuOlC-BX&refurl=' + g.referrer + '&winurl=' + encodeURIComponent(window.location);
+                    t.parentNode.insertBefore(y[ge], t); y[ge].onerror = function () { y[ge].remove(); ge++; tl(); };
+                }
+            }; tl();
+        })(document, 'script');
+    </script>
+
+    <script defer>
+        !function () {
+            var analytics = window.analytics = window.analytics || []; if (!analytics.initialize) if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice."); else {
+                analytics.invoked = !0; analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on", "addSourceMiddleware", "addIntegrationMiddleware", "setAnonymousId", "addDestinationMiddleware"]; analytics.factory = function (e) { return function () { var t = Array.prototype.slice.call(arguments); t.unshift(e); analytics.push(t); return analytics } }; for (var e = 0; e < analytics.methods.length; e++) { var key = analytics.methods[e]; analytics[key] = analytics.factory(key) } analytics.load = function (key, e) { var t = document.createElement("script"); t.type = "text/javascript"; t.async = !0; t.src = "https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"; var n = document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(t, n); analytics._loadOptions = e }; analytics.SNIPPET_VERSION = "4.13.1";
+                analytics.load("TGMTHJXCE8CXiE8TAsreLFvP5OWXTD16");
+                analytics.page();
+            }
+        }();
+    </script>
+
+
+    <!-- Impact -->
+    <script type="text/javascript">
+        ire('identify', { customerId: '', customerEmail: '' });
+    </script>
+
+
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6329891.js"></script>
+    <!-- End of HubSpot Embed Code -->
+    <script>
+    </script>
+</body>
+
+</html>

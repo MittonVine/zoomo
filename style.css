@@ -1,0 +1,66 @@
+.container{
+  max-width:1400px;
+  margin:auto;
+}
+.row{
+  display:flex;
+  flex-direction: row;
+  margin:auto;
+}
+.controls{
+  width:400px;
+  align-self: center;
+}
+
+
+.colorPicker{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.colorPicker .extras{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  float: none;
+}
+
+
+.select-bike{
+  display:flex;
+}
+
+.select-bike .option{
+  width:33%;
+}
+
+.select-bike .option img{
+  width: 100%;
+}
+
+.selected{
+  border:1px solid black;
+}
+
+#c canvas{
+  position:fixed;
+  left:0;
+  top:0;
+  z-index: -1;
+}
+
+#control-surface{
+  width:1000px;
+  height: 800px;
+}
+
+.customize-navigation{
+  position:fixed;
+  bottom:100px;
+  width:100%;
+  left:0;
+}
+.customize-navigation>div{
+  display: flex;
+  justify-content: center;
+}

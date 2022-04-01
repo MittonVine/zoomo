@@ -1,0 +1,11 @@
+body{
+    margin:0;
+}
+
+#canvas-3d{
+    position: absolute;
+}
+
+.content{
+    position:fixed;
+}

@@ -1,167 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-
+    
     <!-- Imporant meta information to make the page as rigid as possible on mobiles, to avoid unintentional zooming on the page itself  -->
-    <meta name="viewport"
-        content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Zoomo Sample</title>
+    <title>Chair Tutorial</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway:500,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./colorjoe/colorjoe.css">
-    <link rel="stylesheet" href="./style.css">
+  
+<!-- We add the loader CSS here so that assets don't pop in before the bundled CSS is loaded -->
+<style>
+.loading {
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  background: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.loader{
+  -webkit-perspective: 120px;
+  -moz-perspective: 120px;
+  -ms-perspective: 120px;
+  perspective: 120px;
+  width: 100px;
+  height: 100px;
+}
+
+.loader:before{
+  content: "";
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  width: 50px;
+  height: 50px;
+  background-color: #ff0000;
+  animation: flip 1s infinite;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    transform: rotateY(180deg)  rotateX(180deg);
+  }
+}
+</style>
 </head>
 
 <body>
+  <div id="canvas-container">
+  <canvas id="canvas-3d"></canvas>
+</div>
+<!-- The loading element overlays all else until the model is loaded, at which point we remove this element from the DOM -->  
+<div class="loading" id="js-loader"><div class="loader"></div></div>
 
-    <div class="container">
+<div class="content">
+  <div id="color-picker"></div>
+  <div>
+    <input type="file" name="logo" id="logo-file-input">
+  </div>
+</div>
 
-        <h2 class="step-1">1. Pick your bike</h2>
-
-
-        <h2 class="step-6" style="display:none">6. Get a Quote</h2>
-        <div class="step-1" style="display: none;">
-            Available models to customize currently include the Zoomo Sport, Zoomo Zero, and Zoomo One. You can find
-            more information about each model under e-bikes in our navigation bar.
-            <div class="select-bike">
-                <div class="option" data-model="sport">
-                    <img src="./zoomo-sport.png" alt="">
-                </div>
-                <div class="option" data-model="zero">
-                    <img src="./zoomo-zero.png" alt="">
-                </div>
-                <div class="option selected" data-model="one">
-                    <img src="./zoomo-one2.jpg" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="step-2 step-3 step-4 step-5" style="">
-            <h2 class="step-2" style="display:none">2. Choose your colour</h2>
-            <h2 class="step-3" style="display:none">3. Upload your logo</h2>
-            <h2 class="step-4" style="display:none">4. Review your bike</h2>
-            <h2 class="step-5" style="display:none">5. Choose your hardware</h2>
-            <div class="row">
-                <div class="controls">
-                    <div class="step-2">
-                        <button id="sticker-only">Sticker only</button>
-                        <button id="frame-sleeve">Frame sleeve</button>
-                        <button id="full-wrap">Full wrap</button>
-                        <div id="color-picker"></div>
-                    </div>
-                    <div class="step-3" style="display:none">
-                        <div>Zoomo sport</div>
-                        <p>Upload a transparent PNG file of your logo to be displayed on the body of the e-bike</p>
-                        <p>Recommended sizing requirements for PNG files are 900x130</p>
-                        <p>Note: If you would like to upload multiple logos please contact our support team.</p>
-                        <input type="button" id="loadFileXml" value="Upload logo here"
-                            onclick="document.getElementById('file-selector').click();" />
-                        <input type="file" class="custom-file-input" name="" id="file-selector" style="display:none;">
-                    </div>
-                    <div class="step-4" style="display:none">
-                        <div>This information will be sent to our support team. Before approving, please make sure:
-                        </div>
-                        <ul>
-                            <li>The logo file uploaded is a PNG file on a transparent background</li>
-                            <li>The logo image is clear and does not appear blurry</li>
-                            <li>You have selected the correct colour</li>
-                        </ul>
-                        <input type="checkbox" name="reviewed" id="reviewed">
-                        <label for="reviewed">I have reviewed and approved my design</label>
-                    </div>
-                    <div class="step-5" style="display: none;">
-                        <div>Additional upgrades. These hardware choices will boost your e-bike</div>
-                        <label for="front-rack">Front rack</label>
-                        <input type="checkbox" name="front-rack" id="font-rack">
-                        <label for="rear-rack">Rear rack</label>
-                        <input type="checkbox" name="rear-rack" id="rear-rack">
-                        <label for="rear-basket">Rear basket</label>
-                        <input type="checkbox" name="rear-basket" id="rear-basket">
-                        <label for="quantity"></label>
-                        <input type="number" name="quantity" value="1" id="quantity">
-                    </div>
-                </div>
-                <div id="control-surface"></div>
-                <div class="model"></div>
-            </div>
-        </div>
-
-        <div class="step-6" style="display:none">
-            <div>Your information has been passed on to our support team and they will reach out shortly with more
-                information</div>
-            <div>Please note that we have a minimum order quantity of 20 e-bikes and a lead time of six months for
-                customized wrapping and branding</div>
-            <div class="input-group">
-                <label for="">First/Last Name*</label>
-                <input type="text">
-            </div>
-            <div class="input-group">
-                <label for="">Business Name*</label>
-                <input type="text">
-            </div>
-            <div class="input-group">
-                <label for="">Email Address*</label>
-                <input type="text">
-            </div>
-            <div class="input-group">
-                <label for="">Region*</label>
-                <input type="text">
-            </div>
-            <input type="button" value="Get a quote">
-        </div>
-
-        <div class="customize-navigation">
-            <div class="step-1">
-                <button id="next-2" disabled>Next Step</button>
-            </div>
-            <div class="step-2" style="display:none;">
-                <button id="prev-1">Previous</button>
-                <button id="next-3">Next Step</button>
-            </div>
-            <div class="step-3" style="display:none;">
-                <button id="prev-2">Previous</button>
-                <button id="next-4">Next Step</button>
-            </div>
-            <div class="step-4" style="display:none;">
-                <button id="prev-3">Previous</button>
-                <button id="next-5">Next Step</button>
-            </div>
-            <div class="step-5" style="display:none;">
-                <button id="prev-4">Previous</button>
-                <button id="next-6">Next Step</button>
-            </div>
-            <div class="step-6" style="display:none;">
-                <button id="prev-5">Previous</button>
-            </div>
-        </div>
+<canvas id="logo-canvas" style="display:none;" width="900" height="130"></canvas>
 
 
-    </div>
-    </div>
-    </div>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+  crossorigin="anonymous"></script>
+  
+<script src="/colorjoe/colorjoe.js"></script>
+<link rel="stylesheet" href="/colorjoe/colorjoe.css">
 
-    <canvas id="myCanvas" width="900" height="130" style="display: none;">
-    </canvas>
+<!-- The main three.js file -->
+<script src='https://unpkg.com/three@0.127.0/build/three.js'></script>
 
-    <!-- Import maps polyfill -->
-	<!-- Remove this when import maps will be widely supported -->
-	<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+<!-- This brings in the ability to load custom 3D objects in the .gltf file format. Blender allows the ability to export to this format out the box -->
+<script src='https://cdn.jsdelivr.net/gh/mrdoob/three.js@r92/examples/js/loaders/GLTFLoader.js'></script>
 
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "./build/three.module.js"
-            }
-        }
-    </script>
+<!-- This is a simple to use extension for three.js that activates all the rotating, dragging and zooming controls we need for both mouse and touch, there isn't a clear CDN for this that I can find -->
+<script src='https://threejs.org/examples/js/controls/OrbitControls.js'></script>
+<script src='https://threejs.org/examples/js/loaders/DRACOLoader.js'></script>
+<script src="https://threejs.org/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://threejs.org/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://threejs.org/examples/js/shaders/CopyShader.js"></script>
+<script src="https://threejs.org/examples/js/shaders/SAOShader.js"></script>
+<script src="https://threejs.org/examples/js/shaders/DepthLimitedBlurShader.js"></script>
+<script src="https://threejs.org/examples/js/shaders/UnpackDepthRGBAShader.js"></script>
+<script src="https://threejs.org/examples/js/shaders/DigitalGlitch.js"></script>
+<script src="https://threejs.org/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="https://threejs.org/examples/js/postprocessing/SSAARenderPass.js"></script>
+<script src="https://threejs.org/examples/js/postprocessing/GlitchPass.js"></script>
+<script src="https://threejs.org/examples/js/postprocessing/SAOPass.js"></script>
+<script src="https://raw.githubusercontent.com/spite/THREE.EquirectangularToCubemap/master/build/EquirectangularToCubemap.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-    <script src="./colorjoe/colorjoe.js"></script>
-    <script defer type="module" src="script.js"></script>
+<link rel="stylesheet" href="styles.css">
+<script src="script.js"></script>
 </body>
-
 </html>

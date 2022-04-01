@@ -136,12 +136,15 @@ loader.load(MODEL_PATH, function (gltf) {
   // Add the model to the scene
   theModel.position.y = -1;
 
+  scene.add(theModel);
+
   // Set initial textures
   for (let object of INITIAL_MAP) {
     initColor(theModel, object.childID, object.mtl);
+    renderer.render(scene, camera);
   }
 
-  scene.add(theModel);
+  
 
   composer.render();
 
@@ -442,25 +445,27 @@ $('input[type=radio][name=logostyle]').each(function() {
 
 function setSwatch() {
   var color = joe.get().hex();
-  new_mtl = new THREE.MeshPhongMaterial({
-    color: parseInt('0x' + color.substr(1, 6)),
-    shininess: 10,
-    side: THREE.DoubleSide,
-  });
+  //new_mtl = new THREE.MeshPhongMaterial({
+  //  color: parseInt('0x' + color.substr(1, 6)),
+  //  shininess: 10,
+  //  side: THREE.DoubleSide,
+  //});
 
-  setMaterial(theModel, 'sleeve', new_mtl);
-  setMaterial(theModel, 'notframe', new_mtl);
-  setMaterial(theModel, 'frame', new_mtl);
+  FRAME_MTL.color.set(parseInt('0x' + color.substr(1,6)));
+
+  //setMaterial(theModel, 'sleeve', new_mtl);
+  //setMaterial(theModel, 'notframe', new_mtl);
+  //setMaterial(theModel, 'frame', new_mtl);
 
   if (!fullWrap) {
-    setMaterial(theModel, 'notframe', FRAME_MTL);
-    setMaterial(theModel, 'frame', FRAME_MTL);
+    //setMaterial(theModel, 'notframe', FRAME_MTL);
+    //setMaterial(theModel, 'frame', FRAME_MTL);
   }
 
   if (stickerOnly) {
-    setMaterial(theModel, 'sleeve', FRAME_MTL);
-    setMaterial(theModel, 'notframe', FRAME_MTL);
-    setMaterial(theModel, 'frame', FRAME_MTL);
+    //setMaterial(theModel, 'sleeve', FRAME_MTL);
+    //setMaterial(theModel, 'notframe', FRAME_MTL);
+    //setMaterial(theModel, 'frame', FRAME_MTL);
   }
-  composer.render();
+  renderer.render(scene, camera);
 }

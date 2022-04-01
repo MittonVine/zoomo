@@ -14,4 +14,4 @@ jobs:
         server: vinestaging.com.au
         username: mitton@vinestaging.com.au
         password: ${{ secrets.password }}
-        server-dir: zoomo.vinestaging.com/public_html/
+        server-dir: zoomo.vinestaging.com.au/public_html/

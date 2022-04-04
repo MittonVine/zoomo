@@ -18,7 +18,7 @@ var animating = true;
 var waitingFrame = false;
 
 
-const MODEL_PATH = PATH+"zoomo1.glb";
+const MODEL_PATH = PATH+"zoomozero.glb";
 
 var loaded = false;
 var cameraFar = 5;
@@ -33,7 +33,7 @@ const BACKGROUND_COLOR = 0xf1f1f1;
 const scene = new THREE.Scene();
 // Set background
 scene.background = new THREE.Color(BACKGROUND_COLOR);
-scene.fog = new THREE.Fog(BACKGROUND_COLOR, 20, 100);
+//scene.fog = new THREE.Fog(BACKGROUND_COLOR, 20, 100);
 
 const canvas = document.querySelector('#canvas-3d');
 //const canvas = document.createElement("canvas");
@@ -70,7 +70,7 @@ const GOLD_MTL = new THREE.MeshStandardMaterial({ color: 0xda9e2d, roughness: 0.
 const SILVER_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0, metalness: 1, side: THREE.DoubleSide });
 const BRAKEROTOR_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0.1, metalness: 1, side: THREE.DoubleSide });
 const LIGHT_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide });
-
+const WOOD_MTL = new THREE.MeshPhongMaterial({color:0xC4a484, side: THREE.DoubleSide, shading: THREE.SmoothShading});
 
 const INITIAL_MAP = [
   { childID: "", mtl: MAT_BLACK_MTL },
@@ -96,7 +96,13 @@ const INITIAL_MAP = [
   { childID: "tyre", mtl: MAT_BLACK_MTL },
   { childID: "mudguard", mtl: BLACK_MTL },
   { childID: "saddle", mtl: MAT_BLACK_MTL },
-  { childID: "handlegrips", mtl: MAT_BLACK_MTL }
+  { childID: "handlegrips", mtl: MAT_BLACK_MTL },
+  { childID: "chainring", mtl: SILVER_MTL },
+  { childID: "spoke", mtl: SILVER_MTL },
+  { childID: "chain", mtl: SILVER_MTL },
+  { childID: "rack", mtl: WOOD_MTL }
+
+
 ];
 
 // Init the object loader
@@ -129,7 +135,7 @@ loader.load(MODEL_PATH, function (gltf) {
   });
 
   // Set the models initial scale   
-  theModel.scale.set(0.2, 0.2, 0.2);
+  //theModel.scale.set(0.2, 0.2, 0.2);
   theModel.rotation.y = Math.PI / -2;
 
 

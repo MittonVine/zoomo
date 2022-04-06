@@ -311,6 +311,8 @@ muhMesh.position.y=1.5;
 
 // Add controls
 //var controls = new THREE.OrbitControls(camera, renderer.domElement);
+const control_surface = document.createElement("div");
+control_surface.setAttribute('id', "controls-surface");
 var controls = new THREE.OrbitControls(camera, document.querySelector("#controls-surface"));
 controls.maxPolarAngle = Math.PI / 2;
 controls.minPolarAngle = Math.PI / 3;

@@ -29,8 +29,12 @@ var timer = setTimeout(function(){
 
 function startTimeOut(){
   timer = setTimeout(function () {
-    composer.render();
-    console.log("I rendered");
+    if (stillControlling){
+      renderer.render(scene, camera);
+    } else{
+      composer.render();
+      console.log("I rendered");
+    }
   }, 500);
 }
 

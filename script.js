@@ -310,8 +310,8 @@ muhMesh.position.y=1.5;
 
 
 // Add controls
-//var controls = new THREE.OrbitControls(camera, document.querySelector("#control-surface"));
-var controls = new THREE.OrbitControls(camera, renderer.domElement);
+//var controls = new THREE.OrbitControls(camera, renderer.domElement);
+var controls = new THREE.OrbitControls(camera, document.querySelector("#controls-surface"));
 controls.maxPolarAngle = Math.PI / 2;
 controls.minPolarAngle = Math.PI / 3;
 controls.enableDamping = true;

@@ -533,7 +533,9 @@ jQuery('[name="File-Logo"]').on('change', function() {
                   transparent: true,
               });
 
-              setMaterial(theModel, 'logosurface', new_mtl);
+              setMaterial(modelOne, 'logosurface', new_mtl);
+              setMaterial(modelSport, 'logosurface', new_mtl);
+              setMaterial(modelZero, 'logosurface', new_mtl);
               composer.render();
           }
       }

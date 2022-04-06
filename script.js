@@ -382,8 +382,8 @@ const textureCube = textureLoader.load([
 });
 
 
-renderer.setSize(window.innerWidth, window.innerHeight);
-//renderer.setSize(538, 414);
+//renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(538, 414);
 const composer = new THREE.EffectComposer(renderer);
 composer.addPass(new THREE.RenderPass(scene, camera));
 //composer.addPass(new THREE.GlitchPass());

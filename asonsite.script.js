@@ -1,32 +1,4 @@
-<div class="loading" id="js-loader">
-    <div class="loader"></div>
-</div>
 
-<style>
-	#controls-surface{
-  	position: absolute;
-    top: 28%;
-    right: -8%;
-    max-width: 538px;
-    max-height: 414px;
-    width: 100%;
-    height: 100%;
-    z-index: 9;
-  }
-  #canvas-3d{
-    position: absolute;
-    top: 28%;
-    right: -8%;
-    z-index: 0;
-  }
-  .hidden-canvas{
-  	opacity: 0;
-  }
-  .hidden-controls-surface{
-  	 z-index: 0 !important;
-  }
-</style>
-<script>
 var slide_index = 0;
     jQuery(".w-slide").eq(0).attrchange({
         trackValues: true,
@@ -43,8 +15,7 @@ var slide_index = 0;
             }
         }
     });
-</script>
-<script>
+
 const LOADER = document.getElementById('js-loader');
 const DRAG_NOTICE = document.getElementById('js-drag-notice');
 const PATH = "https://zoomo.vinestaging.com.au/";
@@ -308,9 +279,7 @@ var cubeMaterial = new THREE.MeshBasicMaterial({ envMap: cubeTexture });
 var muhMesh = new THREE.Mesh(geom, cubeMaterial);
 muhMesh.position.y = 1.5;
 //scene.add(muhMesh);
-</script>
 
-<script>
 const textureLoader = new THREE.CubeTextureLoader();
 cubePath = PATH + 'equirect.jpg';
 const textureCube = textureLoader.load([
@@ -512,4 +481,3 @@ function setSwatch() {
     }
     composer.render();
 }
-</script>

@@ -1,3 +1,21 @@
+
+var slide_index = 0;
+jQuery(".w-slide").eq(0).attrchange({
+    trackValues: true,
+    callback: function(event) {
+        if (event.attributeName == "style") {
+            slide_index = Number(jQuery(".w-slider-dot.w-active").index()) + 1;
+            if (slide_index == 1 || slide_index == 6) {
+                jQuery('#canvas-3d').addClass('hidden-canvas');
+                jQuery('#controls-surface').addClass('hidden-controls-surface');
+            } else {
+                jQuery('#canvas-3d').removeClass('hidden-canvas');
+                jQuery('#controls-surface').removeClass('hidden-controls-surface');
+            }
+        }
+    }
+});
+
 //const joe = colorjoe.rgb("color-picker-component","white");
 var joe;
 const LOADER = document.getElementById('js-loader');

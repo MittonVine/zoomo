@@ -12,13 +12,15 @@ var timer = setTimeout(function(){
 
 var stillControlling = false;
 
-var theModel;
+var modelOne;
+var modelSport;
+var modelZero;
 var animating = true;
 
 var waitingFrame = false;
 
 
-const MODEL_PATH = PATH+"zoomozero.glb";
+//const MODEL_PATH = PATH+"zoomosport.glb";
 
 var loaded = false;
 var cameraFar = 5;
@@ -51,15 +53,17 @@ canvascontainer.appendChild(renderer.domElement);
 //document.body.appendChild(renderer.domElement);
 
 // Add a camera
-var camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight);
-camera.position.x = -0.72;
-camera.position.y = 0.24;
-camera.position.z = 10;
+var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight);
+camera.position.x = 1.283;
+camera.position.y = 0.740;
+camera.position.z = 1.723;
 
 var black = 0x303030;
 // Initial material
+
+var woodTexture = new THREE.TextureLoader().load(PATH+'wood.jpg');
+
 const INITIAL_MTL = new THREE.MeshPhongMaterial({ color: 0xf1f100, shininess: 10, side: THREE.DoubleSide });
-// Initial materials
 const FRAME_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide, shading: THREE.SmoothShading });
 const BLACK_MTL = new THREE.MeshPhongMaterial({ color: black, side: THREE.DoubleSide, shininess: 100, shading: THREE.SmoothShading });
 const MAT_BLACK_MTL = new THREE.MeshPhongMaterial({ color: black, side: THREE.DoubleSide, shininess:50, shading: THREE.SmoothShading });
@@ -70,7 +74,7 @@ const GOLD_MTL = new THREE.MeshStandardMaterial({ color: 0xda9e2d, roughness: 0.
 const SILVER_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0, metalness: 1, side: THREE.DoubleSide });
 const BRAKEROTOR_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0.1, metalness: 1, side: THREE.DoubleSide });
 const LIGHT_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide });
-const WOOD_MTL = new THREE.MeshPhongMaterial({color:0xC4a484, side: THREE.DoubleSide, shading: THREE.SmoothShading});
+const WOOD_MTL = new THREE.MeshPhongMaterial({map:woodTexture, side: THREE.DoubleSide, shading: THREE.SmoothShading});
 
 const INITIAL_MAP = [
   { childID: "", mtl: MAT_BLACK_MTL },
@@ -100,7 +104,8 @@ const INITIAL_MAP = [
   { childID: "chainring", mtl: SILVER_MTL },
   { childID: "spoke", mtl: SILVER_MTL },
   { childID: "chain", mtl: SILVER_MTL },
-  { childID: "rack", mtl: WOOD_MTL }
+  { childID: "rim", mtl: SILVER_MTL },
+  { childID: "wood", mtl: WOOD_MTL }
 
 
 ];
@@ -113,16 +118,16 @@ dracoLoader.setDecoderPath(PATH+'examples/js/libs/draco/');
 dracoLoader.setDecoderConfig({ type: 'js' });
 loader.setDRACOLoader(dracoLoader);
 
-loader.load(MODEL_PATH, function (gltf) {
+loader.load(PATH+"zoomo1.glb", function (gltf) {
     // Remove the loader
     var loader = $("#js-loader");
     console.log("Removing the loader");
     console.log(loader);
     loader.hide();
     loader.remove();
-  theModel = gltf.scene;
+  modelOne = gltf.scene;
 
-  theModel.traverse((o) => {
+  modelOne.traverse((o) => {
     if (o.isMesh) {
       if (!o.material.transparent){
         o.castShadow = true;
@@ -135,18 +140,18 @@ loader.load(MODEL_PATH, function (gltf) {
   });
 
   // Set the models initial scale   
-  //theModel.scale.set(0.2, 0.2, 0.2);
-  theModel.rotation.y = Math.PI / -2;
+  //modelOne.scale.set(0.2, 0.2, 0.2);
+  modelOne.rotation.y = Math.PI / -2;
 
 
   // Add the model to the scene
-  theModel.position.y = -1;
+  modelOne.position.y = -0.5;
 
-  scene.add(theModel);
+  scene.add(modelOne);
 
   // Set initial textures
   for (let object of INITIAL_MAP) {
-    initColor(theModel, object.childID, object.mtl);
+    initColor(modelOne, object.childID, object.mtl);
     renderer.render(scene, camera);
   }
 
@@ -165,6 +170,83 @@ loader.load(MODEL_PATH, function (gltf) {
 }, undefined, function (error) {
   console.error(error)
 });
+
+loader.load(PATH+'zoomozero.glb', function (gltf) {
+  // Remove the loader
+  console.log("loaded zero");
+  modelZero = gltf.scene;
+
+modelZero.traverse((o) => {
+  if (o.isMesh) {
+    if (!o.material.transparent){
+      o.castShadow = true;
+    } else{
+      o.castShadow = false;
+    }
+    
+    //o.receiveShadow = true;
+  }
+});
+
+// Set the models initial scale   
+//modelOne.scale.set(0.2, 0.2, 0.2);
+modelZero.rotation.y = Math.PI / -2;
+
+
+// Add the model to the scene
+modelZero.position.y = -0.5;
+
+//scene.add(modelZero);
+
+// Set initial textures
+for (let object of INITIAL_MAP) {
+  initColor(modelZero, object.childID, object.mtl);
+  renderer.render(scene, camera);
+}
+
+}, undefined, function (error) {
+console.error(error)
+});
+
+
+loader.load(PATH+'zoomosport.glb', function (gltf) {
+  // Remove the loader
+  console.log("loaded sport");
+  modelSport = gltf.scene;
+
+modelSport.traverse((o) => {
+  if (o.isMesh) {
+    if (!o.material.transparent){
+      o.castShadow = true;
+    } else{
+      o.castShadow = false;
+    }
+    
+    //o.receiveShadow = true;
+  }
+});
+
+// Set the models initial scale   
+//modelOne.scale.set(0.2, 0.2, 0.2);
+modelSport.rotation.y = Math.PI / -2;
+
+
+// Add the model to the scene
+modelSport.position.y = -0.5;
+
+//scene.add(modelSport);
+
+// Set initial textures
+for (let object of INITIAL_MAP) {
+  initColor(modelSport, object.childID, object.mtl);
+  renderer.render(scene, camera);
+}
+
+}, undefined, function (error) {
+console.error(error)
+});
+
+
 
 // Function - Add the textures to the models
 function initColor(parent, type, mtl) {
@@ -208,7 +290,7 @@ var floorMaterial = new THREE.MeshPhongMaterial({
 var floor = new THREE.Mesh(floorGeometry, floorMaterial);
 floor.rotation.x = -0.5 * Math.PI;
 floor.receiveShadow = true;
-floor.position.y = -1;
+floor.position.y = -0.5;
 scene.add(floor);
 
 //var geom = new THREE.SphereGeometry(10,60,40);
@@ -235,8 +317,8 @@ controls.enablePan = false;
 controls.dampingFactor = 0.1;
 controls.autoRotate = false; // Toggle this if you'd like the chair to automatically rotate
 controls.autoRotateSpeed = 0.2; // 30
-controls.minDistance = 5;
-controls.maxDistance = 10;
+controls.minDistance = 1;
+controls.maxDistance = 3;
 
 controls.addEventListener('start', function(){
   stillControlling = true;
@@ -367,7 +449,7 @@ let initRotate = 0;
 function initialRotation() {
   initRotate++;
   if (initRotate <= 120) {
-    theModel.rotation.y += Math.PI / 60;
+    modelOne.rotation.y += Math.PI / 60;
   } else {
     loaded = true;
   }
@@ -418,7 +500,9 @@ $('#logo-file-input').on('change', function () {
           transparent: true,
         });
 
-        setMaterial(theModel, 'logosurface', new_mtl);
+        setMaterial(modelOne, 'logosurface', new_mtl);
+        setMaterial(modelSport, 'logosurface', new_mtl);
+        setMaterial(modelZero, 'logosurface', new_mtl);
         composer.render();
       }
     }
@@ -459,19 +543,43 @@ function setSwatch() {
 
   FRAME_MTL.color.set(parseInt('0x' + color.substr(1,6)));
 
-  //setMaterial(theModel, 'sleeve', new_mtl);
-  //setMaterial(theModel, 'notframe', new_mtl);
-  //setMaterial(theModel, 'frame', new_mtl);
+  //setMaterial(modelOne, 'sleeve', new_mtl);
+  //setMaterial(modelOne, 'notframe', new_mtl);
+  //setMaterial(modelOne, 'frame', new_mtl);
 
   if (!fullWrap) {
-    //setMaterial(theModel, 'notframe', FRAME_MTL);
-    //setMaterial(theModel, 'frame', FRAME_MTL);
+    //setMaterial(modelOne, 'notframe', FRAME_MTL);
+    //setMaterial(modelOne, 'frame', FRAME_MTL);
   }
 
   if (stickerOnly) {
-    //setMaterial(theModel, 'sleeve', FRAME_MTL);
-    //setMaterial(theModel, 'notframe', FRAME_MTL);
-    //setMaterial(theModel, 'frame', FRAME_MTL);
+    //setMaterial(modelOne, 'sleeve', FRAME_MTL);
+    //setMaterial(modelOne, 'notframe', FRAME_MTL);
+    //setMaterial(modelOne, 'frame', FRAME_MTL);
   }
   renderer.render(scene, camera);
 }
+
+$("#one").click(function(){
+  console.log("one");
+  scene.remove(modelZero);
+  scene.remove(modelSport);
+  scene.add(modelOne);
+  composer.render();
+});
+
+$("#sport").click(function(){
+  console.log("sport");
+  scene.remove(modelZero);
+  scene.add(modelSport);
+  scene.remove(modelOne);
+  composer.render();
+});
+
+$("#zero").click(function(){
+  console.log("zero");
+  scene.add(modelZero);
+  scene.remove(modelSport);
+  scene.remove(modelOne);
+  composer.render();
+});

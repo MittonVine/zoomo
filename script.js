@@ -632,25 +632,41 @@ function setSwatch() {
 }
 
 $("#one").click(function(){
-  console.log("one");
-  scene.remove(modelZero);
-  scene.remove(modelSport);
-  scene.add(modelOne);
-  composer.render();
+
 });
 
 $("#sport").click(function(){
-  console.log("sport");
-  scene.remove(modelZero);
-  scene.add(modelSport);
-  scene.remove(modelOne);
-  composer.render();
+
 });
 
 $("#zero").click(function(){
-  console.log("zero");
-  scene.add(modelZero);
-  scene.remove(modelSport);
-  scene.remove(modelOne);
-  composer.render();
+
 });
+
+$('input[type=radio][name=pickyourbike]').each(function() {
+  $(this).change(function() {
+  switch ($(this).val()) {
+  case 'Zoomo Sport':
+    console.log("sport");
+    scene.remove(modelZero);
+    scene.add(modelSport);
+    scene.remove(modelOne);
+    composer.render();
+  break;
+  case 'Zoomo Zero':
+    console.log("zero");
+    scene.add(modelZero);
+    scene.remove(modelSport);
+    scene.remove(modelOne);
+    composer.render();
+  break;
+  case 'Zoomo One':
+    console.log("one");
+    scene.remove(modelZero);
+    scene.remove(modelSport);
+    scene.add(modelOne);
+    composer.render();
+  break;
+  }
+  });
+  });

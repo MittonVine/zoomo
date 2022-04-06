@@ -1,4 +1,4 @@
-const joe = colorjoe.rgb("color-picker","white");
+const joe = colorjoe.rgb("color-picker-component","white");
 
 const LOADER = document.getElementById('js-loader');
 const DRAG_NOTICE = document.getElementById('js-drag-notice');

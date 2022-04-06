@@ -623,6 +623,12 @@ function setSwatch() {
     setMaterial(modelSport, 'frame', LIGHT_MTL);
   }
   renderer.render(scene, camera);
+  timer = setTimeout(function () {
+    requestAnimationFrame(function () {
+      composer.render();
+      console.log("I rendered");
+    });
+  }, 500);
 }
 
 $("#one").click(function () {

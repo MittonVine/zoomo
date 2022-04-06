@@ -23,21 +23,10 @@ const DRAG_NOTICE = document.getElementById('js-drag-notice');
 const PATH = "https://zoomo.vinestaging.com.au/";
 //const PATH ="";
 
-var timer = setTimeout(function(){
-  console.log("I did nothing");
-},500)
-
-function startTimeOut(){
-  timer = setTimeout(function () {
-    if (stillControlling){
-      renderer.render(scene, camera);
-    } else{
-      composer.render();
-      console.log("I rendered");
-    }
-  }, 500);
-}
-
+var timer = setTimeout(function () {
+  composer.render();
+  console.log("I rendered");
+}, 5000);
 
 var stillControlling = false;
 
@@ -351,7 +340,16 @@ controls.addEventListener('start', function () {
 
 controls.addEventListener('end', function () {
   stillControlling = false;
-  startTimeOut();
+  clearTimeout(timer);
+  timer = setTimeout(function () {
+    if (!stillControlling) {
+      requestAnimationFrame(function () {
+        composer.render();
+        console.log("I rendered");
+      })
+    }
+  },
+    500);
 })
 
 controls.addEventListener('change', function (e) {
@@ -364,7 +362,16 @@ controls.addEventListener('change', function (e) {
       waitingFrame = false;
     });
   }
-  startTimeOut();
+  clearTimeout(timer);
+  timer = setTimeout(function () {
+    if (!stillControlling) {
+      requestAnimationFrame(function () {
+        composer.render();
+        console.log("I rendered");
+      })
+    }
+  },
+    500)
 
 })
 
@@ -616,7 +623,6 @@ function setSwatch() {
     setMaterial(modelSport, 'frame', LIGHT_MTL);
   }
   renderer.render(scene, camera);
-  startTimeOut();
 }
 
 $("#one").click(function () {
@@ -667,4 +673,5 @@ jQuery('#color_picked_preview circle').attrchange({
     }
   }
 });
+
 

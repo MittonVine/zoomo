@@ -103,7 +103,6 @@ const INITIAL_MAP = [
   { childID: "frame", mtl: FRAME_MTL },
   { childID: "framesleeve", mtl: FRAME_MTL },
   { childID: "sleeve", mtl: FRAME_MTL },
-  { childID: "notframe", mtl: FRAME_MTL },
   { childID: "logosurface", mtl: TRANSPARENT_MTL },
   { childID: "brake", mtl: GOLD_MTL },
   { childID: "lever", mtl: BLACK_MTL },
@@ -609,35 +608,26 @@ function setSwatch() {
   FRAME_MTL.color.set(parseInt('0x' + color.substr(1,6)));
 
   setMaterial(modelOne, 'sleeve', FRAME_MTL);
-  setMaterial(modelOne, 'notframe', FRAME_MTL);
   setMaterial(modelOne, 'frame', FRAME_MTL);
 
   setMaterial(modelZero, 'sleeve', FRAME_MTL);
-  setMaterial(modelZero, 'notframe', FRAME_MTL);
   setMaterial(modelZero, 'frame', FRAME_MTL);
 
   setMaterial(modelSport, 'sleeve', FRAME_MTL);
-  setMaterial(modelSport, 'notframe', FRAME_MTL);
   setMaterial(modelSport, 'frame', FRAME_MTL);
 
   if (!fullWrap) {
-    setMaterial(modelOne, 'notframe', FRAME_MTL);
     setMaterial(modelOne, 'frame', LIGHT_MTL);
-    setMaterial(modelZero, 'notframe', FRAME_MTL);
     setMaterial(modelZero, 'frame', LIGHT_MTL);
-    setMaterial(modelSport, 'notframe', FRAME_MTL);
     setMaterial(modelSport, 'frame', LIGHT_MTL);
   }
 
   if (stickerOnly) {
     setMaterial(modelOne, 'sleeve', LIGHT_MTL);
-    setMaterial(modelOne, 'notframe', LIGHT_MTL);
     setMaterial(modelOne, 'frame', LIGHT_MTL);
     setMaterial(modelZero, 'sleeve', LIGHT_MTL);
-    setMaterial(modelZero, 'notframe', LIGHT_MTL);
     setMaterial(modelZero, 'frame', LIGHT_MTL);
     setMaterial(modelSport, 'sleeve', LIGHT_MTL);
-    setMaterial(modelSport, 'notframe', LIGHT_MTL);
     setMaterial(modelSport, 'frame', LIGHT_MTL);
   }
   renderer.render(scene, camera);

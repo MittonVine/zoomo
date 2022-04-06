@@ -48,6 +48,7 @@ renderer.shadowMap.enabled = true;
 renderer.setPixelRatio(window.devicePixelRatio);
 
 canvascontainer = document.querySelector(".canvas-3d");
+
 //canvascontainer = document.querySelector("#email-form");
 //canvascontainer = document.querySelector("#canvas-container");
 canvascontainer.appendChild(renderer.domElement);

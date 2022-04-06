@@ -167,7 +167,7 @@ loader.load(PATH+"zoomo1.glb", function (gltf) {
   // Add the model to the scene
   modelOne.position.y = -0.5;
 
-  scene.add(modelOne);
+  //scene.add(modelOne);
 
   // Set initial textures
   for (let object of INITIAL_MAP) {
@@ -254,7 +254,7 @@ modelSport.rotation.y = Math.PI / -2;
 // Add the model to the scene
 modelSport.position.y = -0.5;
 
-//scene.add(modelSport);
+scene.add(modelSport);
 
 // Set initial textures
 for (let object of INITIAL_MAP) {

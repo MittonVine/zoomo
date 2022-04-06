@@ -37,8 +37,9 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(BACKGROUND_COLOR);
 //scene.fog = new THREE.Fog(BACKGROUND_COLOR, 20, 100);
 
-const canvas = document.querySelector('#canvas-3d');
-//const canvas = document.createElement("canvas");
+//const canvas = document.querySelector('#canvas-3d');
+const canvas = document.createElement("canvas");
+canvas.setAttribute('id','canvas-3d');
 
 // Init the renderer
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });

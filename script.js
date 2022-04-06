@@ -567,7 +567,8 @@ $('input[type=radio][name=logostyle]').each(function() {
   });
 
 function setSwatch() {
-  var color = joe.get().hex();
+  //var color = joe.get().hex();
+  var color = jQuery('#hex_input').val();
   //new_mtl = new THREE.MeshPhongMaterial({
   //  color: parseInt('0x' + color.substr(1, 6)),
   //  shininess: 10,

@@ -23,8 +23,12 @@ const DRAG_NOTICE = document.getElementById('js-drag-notice');
 const PATH = "https://zoomo.vinestaging.com.au/";
 //const PATH ="";
 
+var timer = setTimeout(function(){
+  console.log("I did nothing");
+},500)
+
 function startTimeOut(){
-  var timer = setTimeout(function () {
+  timer = setTimeout(function () {
     composer.render();
     console.log("I rendered");
   }, 500);

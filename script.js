@@ -89,7 +89,7 @@ const BLACK_MTL = new THREE.MeshPhongMaterial({ color: black, side: THREE.Double
 const MAT_BLACK_MTL = new THREE.MeshPhongMaterial({ color: black, side: THREE.DoubleSide, shininess: 50, shading: THREE.SmoothShading });
 const ORANGE_MTL = new THREE.MeshPhongMaterial({ color: 0xff8700, side: THREE.DoubleSide });
 const YELLOW_MTL = new THREE.MeshPhongMaterial({ color: 0xffff00, side: THREE.DoubleSide });
-const TRANSPARENT_MTL = new THREE.MeshPhongMaterial({ color: 0x000000, transparent: true, visible: false });
+const TRANSPARENT_MTL = new THREE.MeshPhongMaterial({ color: 0x000000, transparent: true, visible: false, side: THREE.DoubleSide });
 const GOLD_MTL = new THREE.MeshStandardMaterial({ color: 0xda9e2d, roughness: 0.01, metalness: 1, side: THREE.DoubleSide });
 const SILVER_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0, metalness: 1, side: THREE.DoubleSide });
 const BRAKEROTOR_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0.1, metalness: 1, side: THREE.DoubleSide });
@@ -102,7 +102,7 @@ const INITIAL_MAP = [
   { childID: "fork", mtl: BLACK_MTL },
   { childID: "frame", mtl: FRAME_MTL },
   { childID: "framesleeve", mtl: FRAME_MTL },
-  { childID: "sleeve", mtl: FRAME_MTL },
+  { childID: "sleeve", mtl: TRANSPARENT_MTL },
   { childID: "logosurface", mtl: TRANSPARENT_MTL },
   { childID: "brake", mtl: GOLD_MTL },
   { childID: "lever", mtl: BLACK_MTL },

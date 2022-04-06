@@ -620,15 +620,33 @@ function setSwatch() {
   setMaterial(modelOne, 'notframe', FRAME_MTL);
   setMaterial(modelOne, 'frame', FRAME_MTL);
 
+  setMaterial(modelZero, 'sleeve', FRAME_MTL);
+  setMaterial(modelZero, 'notframe', FRAME_MTL);
+  setMaterial(modelZero, 'frame', FRAME_MTL);
+
+  setMaterial(modelSport, 'sleeve', FRAME_MTL);
+  setMaterial(modelSport, 'notframe', FRAME_MTL);
+  setMaterial(modelSport, 'frame', FRAME_MTL);
+
   if (!fullWrap) {
     setMaterial(modelOne, 'notframe', FRAME_MTL);
     setMaterial(modelOne, 'frame', LIGHT_MTL);
+    setMaterial(modelZero, 'notframe', FRAME_MTL);
+    setMaterial(modelZero, 'frame', LIGHT_MTL);
+    setMaterial(modelSport, 'notframe', FRAME_MTL);
+    setMaterial(modelSport, 'frame', LIGHT_MTL);
   }
 
   if (stickerOnly) {
     setMaterial(modelOne, 'sleeve', LIGHT_MTL);
     setMaterial(modelOne, 'notframe', LIGHT_MTL);
     setMaterial(modelOne, 'frame', LIGHT_MTL);
+    setMaterial(modelZero, 'sleeve', LIGHT_MTL);
+    setMaterial(modelZero, 'notframe', LIGHT_MTL);
+    setMaterial(modelZero, 'frame', LIGHT_MTL);
+    setMaterial(modelSport, 'sleeve', LIGHT_MTL);
+    setMaterial(modelSport, 'notframe', LIGHT_MTL);
+    setMaterial(modelSport, 'frame', LIGHT_MTL);
   }
   renderer.render(scene, camera);
 }

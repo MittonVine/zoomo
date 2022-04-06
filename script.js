@@ -494,6 +494,16 @@ function setMaterial(parent, type, mtl) {
 //  setSwatch();
 //});
 
+// event change color
+jQuery('#color_picked_preview circle').attrchange({
+  trackValues: true,
+  callback: function(event) {
+      if (event.attributeName == "fill") {
+          setSwatch();
+      }
+  }
+});
+
 // event change upload file
 $('#logo-file-input').on('change', function () {
   var file = $(this).get(0).files[0];

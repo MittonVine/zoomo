@@ -468,9 +468,9 @@ function setMaterial(parent, type, mtl) {
 }
 
 // event change color
-joe.on("change", function(color){
-  setSwatch();
-});
+//joe.on("change", function(color){
+//  setSwatch();
+//});
 
 // event change upload file
 $('#logo-file-input').on('change', function () {

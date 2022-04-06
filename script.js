@@ -2,8 +2,8 @@ const joe = colorjoe.rgb("color-picker","white");
 
 const LOADER = document.getElementById('js-loader');
 const DRAG_NOTICE = document.getElementById('js-drag-notice');
-//const PATH = "https://zoomo.vinestaging.com.au/";
-const PATH ="";
+const PATH = "https://zoomo.vinestaging.com.au/";
+//const PATH ="";
 
 var timer = setTimeout(function(){
   composer.render();

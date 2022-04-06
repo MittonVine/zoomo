@@ -410,15 +410,17 @@ composer.addPass(new THREE.RenderPass(scene, camera));
 //composer.addPass(new THREE.GlitchPass());
 const sSAARenderPass = new THREE.SSAARenderPass(scene, camera);
 composer.addPass (sSAARenderPass);
+
+
 function setLightsPosition() {
   dirLight.position.set(
-    camera.position.x - 1,
-    camera.position.y + 3,
+    camera.position.x - 0.1,
+    camera.position.y + 0.3,
     camera.position.z
   );
   dirLight2.position.set(
-    camera.position.x + 1,
-    camera.position.y - 1,
+    camera.position.x + 0.1,
+    camera.position.y - 0.1,
     camera.position.z
   );
 }

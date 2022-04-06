@@ -505,43 +505,78 @@ jQuery('#color_picked_preview circle').attrchange({
 });
 
 // event change upload file
-$('#logo-file-input').on('change', function () {
-  var file = $(this).get(0).files[0];
+jQuery('[name="File-Logo"]').on('change', function() {
+  var file = jQuery(this).get(0).files[0];
   if (file) {
-    var reader = new FileReader();
-    reader.onload = function () {
-      var src = reader.result;
-      // do something
-      var image = new Image();
-      image.src = src;
-      image.onload = function () {
-        const w = image.naturalWidth;
-        const h = image.naturalHeight;
-        const canvas = document.getElementById('logo-canvas');
-        const ctx = canvas.getContext('2d');
-        ctx.resetTransform();
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        const scale = Math.min(canvas.width / w, canvas.height / h);
-        ctx.setTransform(scale, 0, 0, scale, canvas.width / 2, canvas.height / 2);
-        ctx.drawImage(image, -w / 2, -h / 2, w, h);
+      var reader = new FileReader();
+      reader.onload = function() {
+          var src = reader.result;
+          // do something
+          var image = new Image();
+          image.src = src;
+          image.onload = function() {
+              const w = image.naturalWidth;
+              const h = image.naturalHeight;
+              const canvas = document.getElementById('myCanvas');
+              const ctx = canvas.getContext('2d');
+              ctx.resetTransform();
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+              const scale = Math.min(canvas.width / w, canvas.height / h);
+              ctx.setTransform(scale, 0, 0, scale, canvas.width / 2, canvas.height / 2);
+              ctx.drawImage(image, -w / 2, -h / 2, w, h);
 
-        var canvasTexture = new THREE.CanvasTexture(canvas);
+              var canvasTexture = new THREE.CanvasTexture(canvas);
 
-        var new_mtl = new THREE.MeshPhongMaterial({
-          side: THREE.DoubleSide,
-          map: canvasTexture,
-          transparent: true,
-        });
+              var new_mtl = new THREE.MeshPhongMaterial({
+                  side: THREE.DoubleSide,
+                  map: canvasTexture,
+                  transparent: true,
+              });
 
-        setMaterial(modelOne, 'logosurface', new_mtl);
-        setMaterial(modelSport, 'logosurface', new_mtl);
-        setMaterial(modelZero, 'logosurface', new_mtl);
-        composer.render();
+              setMaterial(theModel, 'logosurface', new_mtl);
+              composer.render();
+          }
       }
-    }
-    reader.readAsDataURL(file);
+      reader.readAsDataURL(file);
   }
 });
+// $('#logo-file-input').on('change', function () {
+//   var file = $(this).get(0).files[0];
+//   if (file) {
+//     var reader = new FileReader();
+//     reader.onload = function () {
+//       var src = reader.result;
+//       // do something
+//       var image = new Image();
+//       image.src = src;
+//       image.onload = function () {
+//         const w = image.naturalWidth;
+//         const h = image.naturalHeight;
+//         const canvas = document.getElementById('logo-canvas');
+//         const ctx = canvas.getContext('2d');
+//         ctx.resetTransform();
+//         ctx.clearRect(0, 0, canvas.width, canvas.height);
+//         const scale = Math.min(canvas.width / w, canvas.height / h);
+//         ctx.setTransform(scale, 0, 0, scale, canvas.width / 2, canvas.height / 2);
+//         ctx.drawImage(image, -w / 2, -h / 2, w, h);
+
+//         var canvasTexture = new THREE.CanvasTexture(canvas);
+
+//         var new_mtl = new THREE.MeshPhongMaterial({
+//           side: THREE.DoubleSide,
+//           map: canvasTexture,
+//           transparent: true,
+//         });
+
+//         setMaterial(modelOne, 'logosurface', new_mtl);
+//         setMaterial(modelSport, 'logosurface', new_mtl);
+//         setMaterial(modelZero, 'logosurface', new_mtl);
+//         composer.render();
+//       }
+//     }
+//     reader.readAsDataURL(file);
+//   }
+// });
 
 // event change radio color
 $('input[type=radio][name=logostyle]').each(function() {

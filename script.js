@@ -614,19 +614,19 @@ function setSwatch() {
 
   FRAME_MTL.color.set(parseInt('0x' + color.substr(1,6)));
 
-  //setMaterial(modelOne, 'sleeve', new_mtl);
-  //setMaterial(modelOne, 'notframe', new_mtl);
-  //setMaterial(modelOne, 'frame', new_mtl);
+  setMaterial(modelOne, 'sleeve', FRAME_MTL);
+  setMaterial(modelOne, 'notframe', FRAME_MTL);
+  setMaterial(modelOne, 'frame', FRAME_MTL);
 
   if (!fullWrap) {
-    //setMaterial(modelOne, 'notframe', FRAME_MTL);
-    //setMaterial(modelOne, 'frame', FRAME_MTL);
+    setMaterial(modelOne, 'notframe', FRAME_MTL);
+    setMaterial(modelOne, 'frame', LIGHT_MTL);
   }
 
   if (stickerOnly) {
-    //setMaterial(modelOne, 'sleeve', FRAME_MTL);
-    //setMaterial(modelOne, 'notframe', FRAME_MTL);
-    //setMaterial(modelOne, 'frame', FRAME_MTL);
+    setMaterial(modelOne, 'sleeve', LIGHT_MTL);
+    setMaterial(modelOne, 'notframe', LIGHT_MTL);
+    setMaterial(modelOne, 'frame', LIGHT_MTL);
   }
   renderer.render(scene, camera);
 }

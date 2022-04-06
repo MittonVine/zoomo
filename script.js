@@ -665,15 +665,12 @@ $('input[type=radio][name=pickyourbike]').each(function () {
   });
 });
 
-jQuery(document).ready(function ($) {
-  // event change color
-  jQuery('#color_picked_preview circle').attrchange({
-    trackValues: true,
-    callback: function (event) {
-      if (event.attributeName == "fill") {
-        setSwatch();
-      }
+jQuery('#color_picked_preview circle').attrchange({
+  trackValues: true,
+  callback: function (event) {
+    if (event.attributeName == "fill") {
+      setSwatch();
     }
-  });
-
+  }
 });
+

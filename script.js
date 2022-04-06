@@ -1,19 +1,19 @@
 
 var slide_index = 0;
 jQuery(".w-slide").eq(0).attrchange({
-    trackValues: true,
-    callback: function(event) {
-        if (event.attributeName == "style") {
-            slide_index = Number(jQuery(".w-slider-dot.w-active").index()) + 1;
-            if (slide_index == 1 || slide_index == 6) {
-                jQuery('#canvas-3d').addClass('hidden-canvas');
-                jQuery('#controls-surface').addClass('hidden-controls-surface');
-            } else {
-                jQuery('#canvas-3d').removeClass('hidden-canvas');
-                jQuery('#controls-surface').removeClass('hidden-controls-surface');
-            }
-        }
+  trackValues: true,
+  callback: function (event) {
+    if (event.attributeName == "style") {
+      slide_index = Number(jQuery(".w-slider-dot.w-active").index()) + 1;
+      if (slide_index == 1 || slide_index == 6) {
+        jQuery('#canvas-3d').addClass('hidden-canvas');
+        jQuery('#controls-surface').addClass('hidden-controls-surface');
+      } else {
+        jQuery('#canvas-3d').removeClass('hidden-canvas');
+        jQuery('#controls-surface').removeClass('hidden-controls-surface');
+      }
     }
+  }
 });
 
 //const joe = colorjoe.rgb("color-picker-component","white");
@@ -23,7 +23,7 @@ const DRAG_NOTICE = document.getElementById('js-drag-notice');
 const PATH = "https://zoomo.vinestaging.com.au/";
 //const PATH ="";
 
-var timer = setTimeout(function(){
+var timer = setTimeout(function () {
   composer.render();
   console.log("I rendered");
 }, 5000);
@@ -57,7 +57,7 @@ scene.background = new THREE.Color(BACKGROUND_COLOR);
 
 //const canvas = document.querySelector('#canvas-3d');
 const canvas = document.createElement("canvas");
-canvas.setAttribute('id','canvas-3d');
+canvas.setAttribute('id', 'canvas-3d');
 
 // Init the renderer
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
@@ -81,12 +81,12 @@ camera.position.z = 1.723;
 var black = 0x303030;
 // Initial material
 
-var woodTexture = new THREE.TextureLoader().load(PATH+'wood.jpg');
+var woodTexture = new THREE.TextureLoader().load(PATH + 'wood.jpg');
 
 const INITIAL_MTL = new THREE.MeshPhongMaterial({ color: 0xf1f100, shininess: 10, side: THREE.DoubleSide });
 const FRAME_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide, shading: THREE.SmoothShading });
 const BLACK_MTL = new THREE.MeshPhongMaterial({ color: black, side: THREE.DoubleSide, shininess: 100, shading: THREE.SmoothShading });
-const MAT_BLACK_MTL = new THREE.MeshPhongMaterial({ color: black, side: THREE.DoubleSide, shininess:50, shading: THREE.SmoothShading });
+const MAT_BLACK_MTL = new THREE.MeshPhongMaterial({ color: black, side: THREE.DoubleSide, shininess: 50, shading: THREE.SmoothShading });
 const ORANGE_MTL = new THREE.MeshPhongMaterial({ color: 0xff8700, side: THREE.DoubleSide });
 const YELLOW_MTL = new THREE.MeshPhongMaterial({ color: 0xffff00, side: THREE.DoubleSide });
 const TRANSPARENT_MTL = new THREE.MeshPhongMaterial({ color: 0x000000, transparent: true });
@@ -94,7 +94,7 @@ const GOLD_MTL = new THREE.MeshStandardMaterial({ color: 0xda9e2d, roughness: 0.
 const SILVER_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0, metalness: 1, side: THREE.DoubleSide });
 const BRAKEROTOR_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0.1, metalness: 1, side: THREE.DoubleSide });
 const LIGHT_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide });
-const WOOD_MTL = new THREE.MeshPhongMaterial({map:woodTexture, side: THREE.DoubleSide, shading: THREE.SmoothShading});
+const WOOD_MTL = new THREE.MeshPhongMaterial({ map: woodTexture, side: THREE.DoubleSide, shading: THREE.SmoothShading });
 
 const INITIAL_MAP = [
   { childID: "", mtl: MAT_BLACK_MTL },
@@ -133,21 +133,21 @@ const INITIAL_MAP = [
 var loader = new THREE.GLTFLoader();
 
 const dracoLoader = new THREE.DRACOLoader();
-dracoLoader.setDecoderPath(PATH+'examples/js/libs/draco/');
+dracoLoader.setDecoderPath(PATH + 'examples/js/libs/draco/');
 dracoLoader.setDecoderConfig({ type: 'js' });
 loader.setDRACOLoader(dracoLoader);
 
-loader.load(PATH+"zoomo1.glb", function (gltf) {
+loader.load(PATH + "zoomo1.glb", function (gltf) {
   modelOne = gltf.scene;
 
   modelOne.traverse((o) => {
     if (o.isMesh) {
-      if (!o.material.transparent){
+      if (!o.material.transparent) {
         o.castShadow = true;
-      } else{
+      } else {
         o.castShadow = false;
       }
-      
+
       //o.receiveShadow = true;
     }
   });
@@ -168,7 +168,7 @@ loader.load(PATH+"zoomo1.glb", function (gltf) {
     renderer.render(scene, camera);
   }
 
-  
+
 
   composer.render();
 
@@ -177,84 +177,84 @@ loader.load(PATH+"zoomo1.glb", function (gltf) {
   console.error(error)
 });
 
-loader.load(PATH+'zoomozero.glb', function (gltf) {
+loader.load(PATH + 'zoomozero.glb', function (gltf) {
   // Remove the loader
   console.log("loaded zero");
   modelZero = gltf.scene;
 
-modelZero.traverse((o) => {
-  if (o.isMesh) {
-    if (!o.material.transparent){
-      o.castShadow = true;
-    } else{
-      o.castShadow = false;
+  modelZero.traverse((o) => {
+    if (o.isMesh) {
+      if (!o.material.transparent) {
+        o.castShadow = true;
+      } else {
+        o.castShadow = false;
+      }
+
+      //o.receiveShadow = true;
     }
-    
-    //o.receiveShadow = true;
+  });
+
+  // Set the models initial scale   
+  //modelOne.scale.set(0.2, 0.2, 0.2);
+  modelZero.rotation.y = Math.PI / -2;
+
+
+  // Add the model to the scene
+  modelZero.position.y = -0.5;
+
+  //scene.add(modelZero);
+
+  // Set initial textures
+  for (let object of INITIAL_MAP) {
+    initColor(modelZero, object.childID, object.mtl);
+    renderer.render(scene, camera);
   }
-});
-
-// Set the models initial scale   
-//modelOne.scale.set(0.2, 0.2, 0.2);
-modelZero.rotation.y = Math.PI / -2;
-
-
-// Add the model to the scene
-modelZero.position.y = -0.5;
-
-//scene.add(modelZero);
-
-// Set initial textures
-for (let object of INITIAL_MAP) {
-  initColor(modelZero, object.childID, object.mtl);
-  renderer.render(scene, camera);
-}
 
 }, undefined, function (error) {
-console.error(error)
+  console.error(error)
 });
 
 
-loader.load(PATH+'zoomosport.glb', function (gltf) {
-      // Remove the loader
-      var loader = $("#js-loader");
-      console.log("Removing the loader");
-      console.log(loader);
-      loader.hide();
-      loader.remove();
+loader.load(PATH + 'zoomosport.glb', function (gltf) {
+  // Remove the loader
+  var loader = $("#js-loader");
+  console.log("Removing the loader");
+  console.log(loader);
+  loader.hide();
+  loader.remove();
   console.log("loaded sport");
   modelSport = gltf.scene;
 
-modelSport.traverse((o) => {
-  if (o.isMesh) {
-    if (!o.material.transparent){
-      o.castShadow = true;
-    } else{
-      o.castShadow = false;
+  modelSport.traverse((o) => {
+    if (o.isMesh) {
+      if (!o.material.transparent) {
+        o.castShadow = true;
+      } else {
+        o.castShadow = false;
+      }
+
+      //o.receiveShadow = true;
     }
-    
-    //o.receiveShadow = true;
+  });
+
+  // Set the models initial scale   
+  //modelOne.scale.set(0.2, 0.2, 0.2);
+  modelSport.rotation.y = Math.PI / -2;
+
+
+  // Add the model to the scene
+  modelSport.position.y = -0.5;
+
+  scene.add(modelSport);
+
+  // Set initial textures
+  for (let object of INITIAL_MAP) {
+    initColor(modelSport, object.childID, object.mtl);
+    renderer.render(scene, camera);
   }
-});
-
-// Set the models initial scale   
-//modelOne.scale.set(0.2, 0.2, 0.2);
-modelSport.rotation.y = Math.PI / -2;
-
-
-// Add the model to the scene
-modelSport.position.y = -0.5;
-
-scene.add(modelSport);
-
-// Set initial textures
-for (let object of INITIAL_MAP) {
-  initColor(modelSport, object.childID, object.mtl);
-  renderer.render(scene, camera);
-}
 
 }, undefined, function (error) {
-console.error(error)
+  console.error(error)
 });
 
 
@@ -295,7 +295,7 @@ var floorGeometry = new THREE.PlaneGeometry(5000, 5000, 1, 1);
 var floorMaterial = new THREE.MeshPhongMaterial({
   color: 0xffffff, // This color is manually dialed in to match the background color
   shininess: 0,
-  side:THREE.DoubleSide
+  side: THREE.DoubleSide
 });
 
 var floor = new THREE.Mesh(floorGeometry, floorMaterial);
@@ -305,16 +305,16 @@ floor.position.y = -0.5;
 scene.add(floor);
 
 //var geom = new THREE.SphereGeometry(10,60,40);
-var geom = new THREE.BoxGeometry(5,5,5);
-geom.scale(-1,1,1);
+var geom = new THREE.BoxGeometry(5, 5, 5);
+geom.scale(-1, 1, 1);
 
-var cubeTexture = new THREE.TextureLoader().load(PATH+'equirect.jpg');
+var cubeTexture = new THREE.TextureLoader().load(PATH + 'equirect.jpg');
 cubeTexture.encoding = THREE.sRGBEncoding;
 cubeTexture.mapping = THREE.EquirectangularReflectionMapping;
 //var equiCube = new EquirectangularToCubemap(renderer);
-var cubeMaterial = new THREE.MeshBasicMaterial({envMap:cubeTexture});
+var cubeMaterial = new THREE.MeshBasicMaterial({ envMap: cubeTexture });
 var muhMesh = new THREE.Mesh(geom, cubeMaterial);
-muhMesh.position.y=1.5;
+muhMesh.position.y = 1.5;
 //scene.add(muhMesh);
 
 
@@ -334,44 +334,44 @@ controls.autoRotateSpeed = 0.2; // 30
 controls.minDistance = 1;
 controls.maxDistance = 3;
 
-controls.addEventListener('start', function(){
+controls.addEventListener('start', function () {
   stillControlling = true;
 })
 
-controls.addEventListener('end', function(){
+controls.addEventListener('end', function () {
   stillControlling = false;
   clearTimeout(timer);
-  timer = setTimeout(function(){
-    if (!stillControlling){
-      requestAnimationFrame(function(){
+  timer = setTimeout(function () {
+    if (!stillControlling) {
+      requestAnimationFrame(function () {
         composer.render();
         console.log("I rendered");
       })
     }
   },
-  500);
+    500);
 })
 
-controls.addEventListener('change', function(e){
-  if (!waitingFrame){
+controls.addEventListener('change', function (e) {
+  if (!waitingFrame) {
     setLightsPosition();
     waitingFrame = true;
-    requestAnimationFrame(function(){
+    requestAnimationFrame(function () {
       controls.update();
       renderer.render(scene, camera);
       waitingFrame = false;
     });
   }
   clearTimeout(timer);
-  timer = setTimeout(function(){
-    if (!stillControlling){
-      requestAnimationFrame(function(){
+  timer = setTimeout(function () {
+    if (!stillControlling) {
+      requestAnimationFrame(function () {
         composer.render();
         console.log("I rendered");
       })
     }
   },
-  500)
+    500)
 
 })
 
@@ -400,7 +400,7 @@ const composer = new THREE.EffectComposer(renderer);
 composer.addPass(new THREE.RenderPass(scene, camera));
 //composer.addPass(new THREE.GlitchPass());
 const sSAARenderPass = new THREE.SSAARenderPass(scene, camera);
-composer.addPass (sSAARenderPass);
+composer.addPass(sSAARenderPass);
 
 
 function setLightsPosition() {
@@ -425,11 +425,11 @@ function animate() {
 
   controls.update();
   //renderer.render(scene, camera);
-  if (animating){
+  if (animating) {
     requestAnimationFrame();
     composer.render();
   }
-  
+
 }
 
 //animate();
@@ -487,52 +487,44 @@ function setMaterial(parent, type, mtl) {
 //  setSwatch();
 //});
 
-// event change color
-jQuery('#color_picked_preview circle').attrchange({
-  trackValues: true,
-  callback: function(event) {
-      if (event.attributeName == "fill") {
-          setSwatch();
-      }
-  }
-});
+
 
 // event change upload file
-jQuery('[name="File-Logo"]').on('change', function() {
+jQuery('[name="File-Logo"]').on('change', function () {
   var file = jQuery(this).get(0).files[0];
   if (file) {
-      var reader = new FileReader();
-      reader.onload = function() {
-          var src = reader.result;
-          // do something
-          var image = new Image();
-          image.src = src;
-          image.onload = function() {
-              const w = image.naturalWidth;
-              const h = image.naturalHeight;
-              const canvas = document.getElementById('myCanvas');
-              const ctx = canvas.getContext('2d');
-              ctx.resetTransform();
-              ctx.clearRect(0, 0, canvas.width, canvas.height);
-              const scale = Math.min(canvas.width / w, canvas.height / h);
-              ctx.setTransform(scale, 0, 0, scale, canvas.width / 2, canvas.height / 2);
-              ctx.drawImage(image, -w / 2, -h / 2, w, h);
+    var reader = new FileReader();
+    reader.onload = function () {
+      var src = reader.result;
+      // do something
+      var image = new Image();
+      image.src = src;
+      image.onload = function () {
+        const w = image.naturalWidth;
+        const h = image.naturalHeight;
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+        ctx.resetTransform();
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const scale = Math.min(canvas.width / w, canvas.height / h);
+        ctx.setTransform(scale, 0, 0, scale, canvas.width / 2, canvas.height / 2);
+        ctx.drawImage(image, -w / 2, -h / 2, w, h);
 
-              var canvasTexture = new THREE.CanvasTexture(canvas);
+        var canvasTexture = new THREE.CanvasTexture(canvas);
 
-              var new_mtl = new THREE.MeshPhongMaterial({
-                  side: THREE.DoubleSide,
-                  map: canvasTexture,
-                  transparent: true,
-              });
+        var new_mtl = new THREE.MeshPhongMaterial({
+          side: THREE.DoubleSide,
+          map: canvasTexture,
+          transparent: true,
+        });
 
-              setMaterial(modelOne, 'logosurface', new_mtl);
-              setMaterial(modelSport, 'logosurface', new_mtl);
-              setMaterial(modelZero, 'logosurface', new_mtl);
-              composer.render();
-          }
+        setMaterial(modelOne, 'logosurface', new_mtl);
+        setMaterial(modelSport, 'logosurface', new_mtl);
+        setMaterial(modelZero, 'logosurface', new_mtl);
+        composer.render();
       }
-      reader.readAsDataURL(file);
+    }
+    reader.readAsDataURL(file);
   }
 });
 // $('#logo-file-input').on('change', function () {
@@ -574,27 +566,27 @@ jQuery('[name="File-Logo"]').on('change', function() {
 // });
 
 // event change radio color
-$('input[type=radio][name=logostyle]').each(function() {
-  $(this).change(function() {
-  switch ($(this).val()) {
-  case 'Full wrap':
-    fullWrap = true;
-    stickerOnly = false;
-    setSwatch();
-  break;
-  case 'Frame sleeve':
-    fullWrap = false;
-    stickerOnly = false;
-    setSwatch();
-  break;
-  case 'Sticker only':
-    fullWrap = false;
-    stickerOnly = true;
-    setSwatch();
-  break;
-  }
+$('input[type=radio][name=logostyle]').each(function () {
+  $(this).change(function () {
+    switch ($(this).val()) {
+      case 'Full wrap':
+        fullWrap = true;
+        stickerOnly = false;
+        setSwatch();
+        break;
+      case 'Frame sleeve':
+        fullWrap = false;
+        stickerOnly = false;
+        setSwatch();
+        break;
+      case 'Sticker only':
+        fullWrap = false;
+        stickerOnly = true;
+        setSwatch();
+        break;
+    }
   });
-  });
+});
 
 function setSwatch() {
   //var color = joe.get().hex();
@@ -605,7 +597,7 @@ function setSwatch() {
   //  side: THREE.DoubleSide,
   //});
 
-  FRAME_MTL.color.set(parseInt('0x' + color.substr(1,6)));
+  FRAME_MTL.color.set(parseInt('0x' + color.substr(1, 6)));
 
   setMaterial(modelOne, 'sleeve', FRAME_MTL);
   setMaterial(modelOne, 'frame', FRAME_MTL);
@@ -633,42 +625,55 @@ function setSwatch() {
   renderer.render(scene, camera);
 }
 
-$("#one").click(function(){
+$("#one").click(function () {
 
 });
 
-$("#sport").click(function(){
+$("#sport").click(function () {
 
 });
 
-$("#zero").click(function(){
+$("#zero").click(function () {
 
 });
 
-$('input[type=radio][name=pickyourbike]').each(function() {
-  $(this).change(function() {
-  switch ($(this).val()) {
-  case 'Zoomo Sport':
-    console.log("sport");
-    scene.remove(modelZero);
-    scene.add(modelSport);
-    scene.remove(modelOne);
-    composer.render();
-  break;
-  case 'Zoomo Zero':
-    console.log("zero");
-    scene.add(modelZero);
-    scene.remove(modelSport);
-    scene.remove(modelOne);
-    composer.render();
-  break;
-  case 'Zoomo One':
-    console.log("one");
-    scene.remove(modelZero);
-    scene.remove(modelSport);
-    scene.add(modelOne);
-    composer.render();
-  break;
-  }
+$('input[type=radio][name=pickyourbike]').each(function () {
+  $(this).change(function () {
+    switch ($(this).val()) {
+      case 'Zoomo Sport':
+        console.log("sport");
+        scene.remove(modelZero);
+        scene.add(modelSport);
+        scene.remove(modelOne);
+        composer.render();
+        break;
+      case 'Zoomo Zero':
+        console.log("zero");
+        scene.add(modelZero);
+        scene.remove(modelSport);
+        scene.remove(modelOne);
+        composer.render();
+        break;
+      case 'Zoomo One':
+        console.log("one");
+        scene.remove(modelZero);
+        scene.remove(modelSport);
+        scene.add(modelOne);
+        composer.render();
+        break;
+    }
   });
+});
+
+jQuery(document).ready(function ($) {
+  // event change color
+  jQuery('#color_picked_preview circle').attrchange({
+    trackValues: true,
+    callback: function (event) {
+      if (event.attributeName == "fill") {
+        setSwatch();
+      }
+    }
   });
+
+});

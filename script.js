@@ -139,12 +139,6 @@ dracoLoader.setDecoderConfig({ type: 'js' });
 loader.setDRACOLoader(dracoLoader);
 
 loader.load(PATH+"zoomo1.glb", function (gltf) {
-    // Remove the loader
-    var loader = $("#js-loader");
-    console.log("Removing the loader");
-    console.log(loader);
-    loader.hide();
-    loader.remove();
   modelOne = gltf.scene;
 
   modelOne.traverse((o) => {
@@ -179,13 +173,6 @@ loader.load(PATH+"zoomo1.glb", function (gltf) {
 
   composer.render();
 
-  // Remove the loader
-  var loader = $("#js-loader");
-  console.log("Removing the loader");
-  console.log(loader);
-  loader.hide();
-  loader.remove();
-  //$("#js-loader").remove();
 
 }, undefined, function (error) {
   console.error(error)
@@ -230,7 +217,12 @@ console.error(error)
 
 
 loader.load(PATH+'zoomosport.glb', function (gltf) {
-  // Remove the loader
+      // Remove the loader
+      var loader = $("#js-loader");
+      console.log("Removing the loader");
+      console.log(loader);
+      loader.hide();
+      loader.remove();
   console.log("loaded sport");
   modelSport = gltf.scene;
 

@@ -1,5 +1,5 @@
-const joe = colorjoe.rgb("color-picker-component","white");
-
+//const joe = colorjoe.rgb("color-picker-component","white");
+var joe;
 const LOADER = document.getElementById('js-loader');
 const DRAG_NOTICE = document.getElementById('js-drag-notice');
 const PATH = "https://zoomo.vinestaging.com.au/";

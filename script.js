@@ -587,6 +587,9 @@ $('input[type=radio][name=logostyle]').each(function () {
       case 'Frame sleeve':
         fullWrap = false;
         stickerOnly = false;
+        if ($(".framesleeve input").prop("checked")){
+          setMaterial(modelZero,"sleevelogosurface", new_mtl);
+        }
         setSwatch();
         break;
       case 'Sticker only':

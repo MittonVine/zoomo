@@ -574,6 +574,11 @@ $('input[type=radio][name=logostyle]').each(function () {
         stickerOnly = false;
         setSwatch();
         break;
+      case 'Fairings':
+        fullWrap = true;
+        stickerOnly = false;
+        setSwatch();
+        break;
       case 'Frame sleeve':
         fullWrap = false;
         stickerOnly = false;

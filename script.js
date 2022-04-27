@@ -104,6 +104,7 @@ const INITIAL_MAP = [
   { childID: "framesleeve", mtl: FRAME_MTL },
   { childID: "sleeve", mtl: TRANSPARENT_MTL },
   { childID: "logosurface", mtl: TRANSPARENT_MTL },
+  { childID: "sleevelogosurface", mtl: TRANSPARENT_MTL },
   { childID: "brake", mtl: GOLD_MTL },
   { childID: "lever", mtl: BLACK_MTL },
   { childID: "cable", mtl: BLACK_MTL },

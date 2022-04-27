@@ -644,11 +644,6 @@ $('input[type=radio][name=pickyourbike]').each(function () {
   $(this).change(function () {
     switch ($(this).val()) {
       case 'Zoomo Sport':
-        console.log("sport");
-        scene.remove(modelZero);
-        scene.add(modelSport);
-        scene.remove(modelOne);
-        composer.render();
         //Hide frame sleeve option
         $(".framesleeve").hide();
         //Hide fairings option
@@ -657,13 +652,12 @@ $('input[type=radio][name=pickyourbike]').each(function () {
         $(".fullwrap").show();
         //Select full wrap option
         $(".fullwrap input").prop("checked", true);
-        break;
-      case 'Zoomo Zero':
-        console.log("zero");
-        scene.add(modelZero);
-        scene.remove(modelSport);
+        scene.remove(modelZero);
+        scene.add(modelSport);
         scene.remove(modelOne);
         composer.render();
+        break;
+      case 'Zoomo Zero':
         //Hide fairings option
         $(".fairings").hide();
         //Show frame sleeve option
@@ -672,13 +666,12 @@ $('input[type=radio][name=pickyourbike]').each(function () {
         $(".fullwrap").show();
         //Select full wrap option
         $(".fullwrap input").prop("checked", true);
+        scene.add(modelZero);
+        scene.remove(modelSport);
+        scene.remove(modelOne);
+        composer.render();
         break;
       case 'Zoomo One':
-        console.log("one");
-        scene.remove(modelZero);
-        scene.remove(modelSport);
-        scene.add(modelOne);
-        composer.render();
         //Hide frame sleeve option
         $(".framesleeve").hide();
         //Show fairings option
@@ -687,6 +680,10 @@ $('input[type=radio][name=pickyourbike]').each(function () {
         $(".fullwrap").hide();
         //Select fairings option
         $(".fairings input").prop("checked", true);
+        scene.remove(modelZero);
+        scene.remove(modelSport);
+        scene.add(modelOne);
+        composer.render();
         break;
     }
   });

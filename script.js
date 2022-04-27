@@ -608,6 +608,7 @@ function setSwatch() {
   setMaterial(modelOne, 'frame', FRAME_MTL);
 
   setMaterial(modelZero, 'sleeve', TRANSPARENT_MTL);
+  setMaterial(modelZero, 'sleevelogosurface', TRANSPARENT_MTL);
   setMaterial(modelZero, 'frame', FRAME_MTL);
 
   setMaterial(modelSport, 'sleeve', TRANSPARENT_MTL);

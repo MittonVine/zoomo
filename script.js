@@ -522,10 +522,10 @@ jQuery('[name="File-Logo"]').on('change', function () {
         setMaterial(modelOne, 'logosurface', new_mtl);
         setMaterial(modelSport, 'logosurface', new_mtl);
         setMaterial(modelZero, 'logosurface', new_mtl);
-        if ($(".framesleeve input").prop("checked")){
-          setMaterial(modelZero,"sleevelogosurface", new_mtl);
+        if ($(".framesleeve input").prop("checked")) {
+          setMaterial(modelZero, "sleevelogosurface", new_mtl);
         }
-        
+
         composer.render();
       }
     }
@@ -587,9 +587,6 @@ $('input[type=radio][name=logostyle]').each(function () {
       case 'Frame sleeve':
         fullWrap = false;
         stickerOnly = false;
-        if ($(".framesleeve input").prop("checked")){
-          setMaterial(modelZero,"sleevelogosurface", new_mtl);
-        }
         setSwatch();
         break;
       case 'Sticker only':
@@ -616,7 +613,6 @@ function setSwatch() {
   setMaterial(modelOne, 'frame', FRAME_MTL);
 
   setMaterial(modelZero, 'sleeve', TRANSPARENT_MTL);
-  setMaterial(modelZero, 'sleevelogosurface', TRANSPARENT_MTL);
   setMaterial(modelZero, 'frame', FRAME_MTL);
 
   setMaterial(modelSport, 'sleeve', TRANSPARENT_MTL);
@@ -638,6 +634,19 @@ function setSwatch() {
     setMaterial(modelZero, 'frame', LIGHT_MTL);
     setMaterial(modelSport, 'sleeve', TRANSPARENT_MTL);
     setMaterial(modelSport, 'frame', LIGHT_MTL);
+  }
+
+  if ($(".framesleeve input").prop("checked")) {
+    const canvas = document.getElementById('myCanvas');
+    var canvasTexture = new THREE.CanvasTexture(canvas);
+    var new_mtl = new THREE.MeshPhongMaterial({
+      side: THREE.DoubleSide,
+      map: canvasTexture,
+      transparent: true,
+    });
+    setMaterial(modelZero, 'sleevelogosurface', new_mtl);
+  } else {
+    setMaterial(modelZero, 'sleevelogosurface', TRANSPARENT_MTL);
   }
   renderer.render(scene, camera);
 }

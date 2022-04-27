@@ -522,6 +522,10 @@ jQuery('[name="File-Logo"]').on('change', function () {
         setMaterial(modelOne, 'logosurface', new_mtl);
         setMaterial(modelSport, 'logosurface', new_mtl);
         setMaterial(modelZero, 'logosurface', new_mtl);
+        if ($(".framesleeve input").prop("checked")){
+          setMaterial(modelZero,"sleevelogosurface", new_mtl);
+        }
+        
         composer.render();
       }
     }

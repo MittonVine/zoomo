@@ -649,6 +649,13 @@ $('input[type=radio][name=pickyourbike]').each(function () {
         scene.add(modelSport);
         scene.remove(modelOne);
         composer.render();
+        //Hide frame sleeve option
+        $(".framesleeve").hide();
+        //Hide fairings option
+        $(".fairings").hide();
+        //Show full wrap option
+        $(".fullwrap").show();
+        //Select full wrap option
         break;
       case 'Zoomo Zero':
         console.log("zero");
@@ -656,6 +663,10 @@ $('input[type=radio][name=pickyourbike]').each(function () {
         scene.remove(modelSport);
         scene.remove(modelOne);
         composer.render();
+        //Hide fairings option
+        //Show frame sleeve option
+        //Show full wrap option
+        //Select full wrap option
         break;
       case 'Zoomo One':
         console.log("one");
@@ -663,6 +674,10 @@ $('input[type=radio][name=pickyourbike]').each(function () {
         scene.remove(modelSport);
         scene.add(modelOne);
         composer.render();
+        //Hide frame sleeve option
+        //Show fairings option
+        //Hide full wrap option
+        //Select fairings option
         break;
     }
   });
